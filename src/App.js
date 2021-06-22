@@ -1,12 +1,11 @@
+import ContactPage from './containers/ContactPage/ContactPage';
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      <div className="Container">
-
-      </div>
-    
+      <ContactPage/>
     </div>
   );
 }

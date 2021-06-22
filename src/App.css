@@ -1,4 +1,5 @@
-.App{
-    background-color: yellow;
-    border-radius: 10px;
+html, body, .App {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
