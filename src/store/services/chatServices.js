@@ -1,6 +1,6 @@
-import { setChats } from "../actions/chatActions";
+import { setChats , setCurrentChat} from "../actions/chatActions";
 import firebase from "./../../config/firebaseConfig";
-
+import { useSelector } from "react-redux";
 
 export const mergeID = (firstID, secondID)=>{
     if(firstID > secondID){
@@ -16,16 +16,19 @@ export const sendMessage = (id, message)=> async ()=>{
 }
 
 export const getYourChats = (id) => async (dispatch)=>{
-    const myChats = [];
     firebase.database().ref("/").child(`chats`)
     .on("value",(snapshot)=>{
         const chats = snapshot.val();
-        console.log("services===>",chats)
-        for(const key in chats){
-            if(key.includes(id)){
-                myChats.push(chats[key])
-            }
-        }
-        dispatch(setChats(myChats));
+        dispatch(setChats(chats));
     })
 }
+ export const initializeCurrentChat = ()=> (dispatch)=>{
+    const chats = useSelector((state)=>state.chatReducer.chats);
+    const chatUser = useSelector((state)=>state.userReducer.demoChatUser);
+  
+    for(const key in chats){
+      if(key.includes(chatUser.uid)){
+        dispatch(setCurrentChat(chats[key]))
+      }
+    }
+ }

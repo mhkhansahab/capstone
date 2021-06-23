@@ -35,9 +35,15 @@ const Footer = ({classes}) => {
         })
     }
 
+    const handleEnter = (e)=>{
+        if(e.key === "Enter"){
+            handleSend();
+        }
+    }
+
     return ( 
         <div className={classes.footer}>
-            <TextInput onChange={(e)=>handleChange(e)} value={message.textMessage}/>
+            <TextInput onChange={(e)=>handleChange(e)} value={message.textMessage} onEnter={(e)=>{handleEnter(e)}}/>
             <SendButton onClick = {()=>handleSend()}/>
         </div>
 

@@ -2,7 +2,7 @@ import TextField from "@material-ui/core/TextField";
 import { styles } from "./TextInput.style";
 import { withStyles } from "@material-ui/styles";
 
-const TextInput = ({ classes , onChange, value}) => {
+const TextInput = ({ classes , onChange, onEnter, value}) => {
   return (
     <div>
       <TextField
@@ -13,6 +13,7 @@ const TextInput = ({ classes , onChange, value}) => {
         shrink="flase"
         onChange = {(e)=>onChange(e)}
         value = {value}
+        onKeyPress={(e)=>onEnter(e)}
       ></TextField>
     </div>
   );

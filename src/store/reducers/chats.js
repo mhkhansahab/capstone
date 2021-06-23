@@ -1,7 +1,8 @@
-import { SET_CHATS } from "../actions/chatActions";
+import { SET_CHATS , SET_CURRENT_CHAT} from "../actions/chatActions";
 
 const initialState = {
-    chats : []
+    chats : [],
+    currentChat : []
 }
 
 
@@ -12,6 +13,11 @@ const reducer = (state = initialState, actions) =>{
             return{
                 ...state,
                 chats : payload
+            }
+        case SET_CURRENT_CHAT:
+            return{
+                ...state,
+                currentChat : payload
             }
         default:
     }
