@@ -6,6 +6,9 @@ const styles = {
         position: "relative",
         marginRight: "1%",
         marginLeft: "1%",
+        '&::-webkit-scrollbar': {
+            display: "none",
+          },
 
         
 
