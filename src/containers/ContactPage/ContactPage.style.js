@@ -24,8 +24,9 @@ const styles = {
         overflowY: "scroll",
         position: "relative",
         marginLeft: "1%",
-        
-
+        '&::-webkit-scrollbar': {
+            display: "none",
+          },
     }
 
 

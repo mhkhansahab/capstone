@@ -1,16 +1,13 @@
 const styles = {
-    subContainer: {
+    container: {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         alignContent: "center",
-
-        },
-        heading: {
-            margin: "0px"
-        },
-        description:{
-            textAlign: "center"
+        paddingRight: "25px",
+        paddingLeft: "25px",
+        paddingBottom: "25px",
+    
         }
     }
 
