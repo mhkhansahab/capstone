@@ -24,4 +24,3 @@ export const setAllUsers = (users)=>(dispatch,getState)=>{
         payload : previousState
       });
 }
-

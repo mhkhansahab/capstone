@@ -1,4 +1,4 @@
-import { DELETE_USER, SET_USER , SET_ALL_USERS} from "../actions/actions";
+import { DELETE_USER, SET_USER , SET_ALL_USERS} from "../actions/authActions";
 
 const initialState = {
     users : [],

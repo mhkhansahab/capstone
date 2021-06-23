@@ -1,5 +1,5 @@
 import firebase from "./../../config/firebaseConfig";
-import { deleteUser, setAllUsers, setUser } from "../actions/actions";
+import { deleteUser, setAllUsers, setUser } from "../actions/authActions";
 
 
 export const getAllUsers = () => async (dispatch) => {
@@ -7,7 +7,7 @@ export const getAllUsers = () => async (dispatch) => {
       .database()
       .ref("/")
       .child(`users/`)
-      .on("child_added",(snapshot) => {
+      .on("value",(snapshot) => {
           dispatch(setAllUsers(snapshot.val()))
       })
   };
