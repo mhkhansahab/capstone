@@ -1,9 +1,8 @@
 import Button from '@material-ui/core/Button';
-import {styles} from './SendButton.style';
+import {styles} from './LoginButton.style';
 import { withStyles } from '@material-ui/styles';
-import SendIcon from '@material-ui/icons/Send';
 
-const SendButton = ({classes}) => {
+const LoginButton = ({classes}) => {
     return ( 
         <Button className={classes.button} variant="contained" color="primary" size="small">
         <SendIcon/>
@@ -12,4 +11,4 @@ const SendButton = ({classes}) => {
      );
 }
  
-export default withStyles(styles)(SendButton);
+export default withStyles(styles)(LoginButton);

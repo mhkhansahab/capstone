@@ -12,7 +12,7 @@ import BackIcon from '../../components/atoms/BackIcon/BackIcon'
 const ChatLayout = ({ classes }) => {
     return (
         <div className={classes.container}>
-            <Header><BackIcon /></Header>
+            <Header><BackIcon className={classes.icon} /></Header>
             <MessageContainer />
             <Footer />
         </div>

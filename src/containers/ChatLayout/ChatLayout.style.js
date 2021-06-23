@@ -2,9 +2,12 @@ const styles = ({
     container: {
         height: "100%",
         justifyContent: "space-between",
-        backgroundColor: "green",
         position: "relative",
 
+
+        },
+        icon:{
+            fill: "white"
         }
     }
 );

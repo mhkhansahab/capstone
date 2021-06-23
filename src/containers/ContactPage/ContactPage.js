@@ -8,7 +8,10 @@ import Header from '../../components/organisms/Header/Header';
 const ContactPage = ({classes}) => {
     return ( 
         <div className={classes.contactContainer}>
-            <Header></Header>
+            <div className={classes.head}>
+            <Header/>
+            <h3>Chats</h3>
+            </div>
             <div className={classes.listContainer}>
             <ContactList/>
             <ContactList/>

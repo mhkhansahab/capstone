@@ -7,8 +7,8 @@ const TextInput = ({classes}) => {
     return ( 
         <div>
             
-        <TextField id="outlined-basic" label="Type your message" variant="outlined" size="small"
-        className={classes.input} shrink="false"></TextField>
+        <TextField id="outlined-basic" variant="outlined" size="small"
+        className={classes.input} shrink="flase"></TextField>
 
         </div>
 

@@ -2,15 +2,13 @@ const styles = {
     input: {
         [`& fieldset`]: {
             borderRadius: "200px",
-            backgroundColor : '#F7F7F7',
-            border: "1px solid #F7F7F7",
+            backgroundColor: "white" ,           
+            width: "100%",
           },
-        width: "100%",
-       
-        },
-        newInput: {
-            color: 'white',
+        [`multilineColor`] : {
+            color : 'white'
         }
+        },
     }
 
 export {

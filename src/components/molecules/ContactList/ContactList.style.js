@@ -7,8 +7,12 @@ const styles = {
     padding: "8px",
     flexDirection: "row",
     alignItems: "center",
-    borderBottom: "1px solid lightgray"
-    
+    borderBottom: "1px solid lightgray",
+    "&:hover": {
+        // opacity: "0.2",
+        backgroundColor: "#916ec5",
+    },
+      transition: "0.5s ease"
         }
     }
 

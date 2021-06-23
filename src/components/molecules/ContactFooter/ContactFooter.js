@@ -7,7 +7,6 @@ const ContactFooter = ({classes}) => {
         <div className={classes.footer}>
             <p>Search Here!</p>
             <SearchIcon/>
-
         </div>
      );
 }
