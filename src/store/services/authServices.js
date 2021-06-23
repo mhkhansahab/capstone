@@ -35,7 +35,7 @@ export const getUser = (uid) => async () => {
       .signInWithPopup(provider)
       .then((result) => {
         const user = result.user;
-  
+        
         const signInUser = {
           name: user.displayName,
           email: user.email,

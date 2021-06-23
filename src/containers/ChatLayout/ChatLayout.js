@@ -6,13 +6,10 @@ import MessageContainer from '../../components/molecules/MessageContainer/Messag
 import BackIcon from '../../components/atoms/BackIcon/BackIcon'
 
 
-
-
-
 const ChatLayout = ({ classes }) => {
     return (
         <div className={classes.container}>
-            <Header><BackIcon className={classes.icon} /></Header>
+            <Header><BackIcon className={classes.icon}/></Header>
             <MessageContainer />
             <Footer />
         </div>
