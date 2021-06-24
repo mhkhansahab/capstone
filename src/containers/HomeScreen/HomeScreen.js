@@ -6,14 +6,8 @@ const HomeScreen = ({ classes }) => {
     return ( 
         <div className={classes.container}>
             <div className={classes.background}>
-
             </div>
-
             <HomeContainer/>
-
-
-
-
         </div>
      );
 }

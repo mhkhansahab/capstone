@@ -1,7 +1,6 @@
 const styles = {
     contactContainer: {
     cursor: "pointer",
-    display: "block",
     height: "45px",
     display: "flex",
     padding: "8px",

@@ -3,6 +3,19 @@ import { DELETE_USER, SET_USER , SET_ALL_USERS} from "../actions/authActions";
 const initialState = {
     users : [],
     currentUser : [],
+    chatUser : [],
+    demoCurrentUser : {
+        email : "hamza.khansahab@gmail.com",
+        name : "Hamza Khan",
+        uid : "HPmR9nB9rEQTqDrohPMBbY6oS8K2",
+
+    },
+    demoChatUser :  {
+        email : "ep19102062.mhamzakhan@gmail.com",
+        name : "Muhammad Hamza Khan",
+        uid : "oN1z78PtOHZg4UexrGGRFRbpWN02",
+
+    }
 }
 
 
