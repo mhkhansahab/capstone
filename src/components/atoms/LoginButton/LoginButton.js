@@ -1,11 +1,8 @@
 import Button from "@material-ui/core/Button";
 import { styles } from "./LoginButton.style";
 import { withStyles } from "@material-ui/styles";
-import {signIn} from "./../../../store/services/authServices";
-import {useDispatch} from "react-redux";
 
-const LoginButton = ({ classes }) => {
-  const dispatch = useDispatch();
+const LoginButton = ({ classes, text, type, onClick , ...props }) => {
 
   return (
     <Button
@@ -13,13 +10,11 @@ const LoginButton = ({ classes }) => {
       variant="contained"
       color="primary"
       size="small"
-      onClick={()=>dispatch(signIn())}
+      type={type}
+      onClick={onClick}
     >
-      <img
-        class={classes.icon}
-        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-      />{" "}
-      Login with Google
+      {props.children}
+      {text}
     </Button>
   );
 };
