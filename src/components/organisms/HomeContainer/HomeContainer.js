@@ -7,7 +7,9 @@ const HomeContainer = ({classes}) => {
     return ( 
         <div className={classes.container}>
             <HomeSubContainer/>
-            <LoginButton/>
+            <LoginButton text="Login with Google">
+            <img class={classes.icon} src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+            </LoginButton>
             
         </div>
      );

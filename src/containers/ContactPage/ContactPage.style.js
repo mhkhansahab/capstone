@@ -7,6 +7,7 @@ const styles = {
     head: {
         paddingRight: "3%",
         paddingLeft: "3%",
+        color: "white",
         display: "flex",
         flexDirection: "row",
         alignItems: "center",

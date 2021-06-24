@@ -7,7 +7,8 @@ const styles = {
 
         },
         heading: {
-            margin: "0px"
+            margin: "0px",
+            color: "white"
         },
         description:{
             textAlign: "center"

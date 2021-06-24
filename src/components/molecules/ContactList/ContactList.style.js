@@ -9,10 +9,8 @@ const styles = {
     alignItems: "center",
     borderBottom: "1px solid lightgray",
     "&:hover": {
-        // opacity: "0.2",
-        backgroundColor: "#916ec5",
+        backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(162,102,246,1) 0%, rgba(203,159,249,1) 90% )", 
     },
-      transition: "0.5s ease"
         }
     }
 

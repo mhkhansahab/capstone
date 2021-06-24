@@ -2,25 +2,18 @@ import ContactPage from './containers/ContactPage/ContactPage';
 import ChatLayout from './containers/ChatLayout/ChatLayout';
 import './App.css';
 import HomeScreen from './containers/HomeScreen/HomeScreen';
-import {useDispatch} from "react-redux";
-//import {getAllUsers, signIn} from "./store/services/authServices";
-import {mergeID, sendMessage, getYourChats} from "./store/services/chatServices";
+import RolePage from './containers/RolePage/RolePage';
 
 
+function App() {
 
-function App() {  
   return (
     <div className="App">
-      <ChatLayout/>
-      <ContactPage/>
-      {/* <LoginButton/>
-      <HomeSubContainer/> */}
-      <HomeScreen/>
+      <HomeScreen />
+      {/* <RolePage/>
+        <ContactPage />
+        <ChatLayout /> */}
 
-
-    {/* <button onClick={()=>myFunc()}>Send Message</button>
-    <button onClick={()=>myFunc2()}>Send Message 2</button>
-    <button onClick={()=>myFunc3()}>Send Message 3</button> */}
     </div>
   );
 }
