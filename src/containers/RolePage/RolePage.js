@@ -6,11 +6,8 @@ import FormContainer from '../../components/organisms/FormContainer/FormContaine
 const HomeSubContainer = ({ classes }) => {
     return (
         <div className={classes.container}>
-            <div className={classes.background}>
-            </div>
+            <div className={classes.background}></div>
             <FormContainer/>
-
-            
         </div>
     );
 }

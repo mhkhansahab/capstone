@@ -2,8 +2,8 @@ import { DELETE_USER, SET_USER , SET_ALL_USERS} from "../actions/authActions";
 
 const initialState = {
     users : [],
-    currentUser : [],
-    chatUser : [],
+    currentUser : null,
+    chatUser : null,
     demoCurrentUser : {
         email : "hamza.khansahab@gmail.com",
         name : "Hamza Khan",
@@ -30,12 +30,12 @@ const reducer = (state = initialState, actions) =>{
         case SET_USER:
             return {
                 ...state,
-                currentUser : [payload]
+                currentUser : payload
             }
         case DELETE_USER:
             return {
                 ...state,
-                currentUser : []
+                currentUser : null
             }
         default:
     }
