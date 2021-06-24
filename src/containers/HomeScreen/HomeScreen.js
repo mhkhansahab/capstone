@@ -5,12 +5,7 @@ import { withStyles } from '@material-ui/styles';
 const HomeScreen = ({ classes }) => {
     return ( 
         <div className={classes.container}>
-
             <HomeContainer/>
-
-
-
-
         </div>
      );
 }

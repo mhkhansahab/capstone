@@ -8,7 +8,6 @@ const HomeContainer = ({classes}) => {
         <div className={classes.container}>
             <HomeSubContainer/>
             <LoginButton/>
-            
         </div>
      );
 }

@@ -1,6 +1,6 @@
 import firebase from "./../../config/firebaseConfig";
 import { deleteUser, setAllUsers, setUser } from "../actions/authActions";
-
+import { setLogin , setFirstLogin} from "../actions/statusActions";
 
 export const getAllUsers = () => async (dispatch) => {
     firebase
@@ -12,20 +12,8 @@ export const getAllUsers = () => async (dispatch) => {
       })
   };
 
-
-export const getUser = (uid) => async () => {
-    firebase
-      .database()
-      .ref("/")
-      .child(`users/${uid}`)
-      .get()
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+export const getUser = async (uid) => {
+  return await (await firebase.database().ref("/").child(`users/${uid}`).get()).exists();
   };
   
   export const signIn = () => async (dispatch) => {
@@ -40,16 +28,21 @@ export const getUser = (uid) => async () => {
           name: user.displayName,
           email: user.email,
           uid: user.uid,
-          isOnline: true,
-          isAvailable: false,
         };
   
-        const userIsAvailable = getUser(user.uid);
-        if (userIsAvailable !== true) {
-          firebase.database().ref("/").child(`users/${user.uid}`).set(signInUser);
-        }
+        getUser(user.uid)
+        .then((isAvailable)=>{
+          if (isAvailable !== true) {
+            firebase.database().ref("/").child(`users/${user.uid}`).set(signInUser);
+            dispatch(setFirstLogin(true));
+          }
+        })
+        
 
-        dispatch(setUser(signInUser))
+        dispatch(setUser(signInUser));
+        dispatch(setLogin(true));
+        //window.localStorage.setItem("isLogin",true);
+
       })
       .catch((error) => {
         console.log(error);
