@@ -12,7 +12,7 @@ const styles = {
     background: {
         width: "100%",
         height: "32%",
-        background: "radial-gradient( circle 848.6px at 10% 20%,  rgba(140,58,255,1) 0%, rgba(181,59,253,1) 50.1% )",
+        background: "radial-gradient( circle 848.6px at 10% 20%, rgba(140,58,255,1) 0%, rgba(181,59,253,1) 50.1% )",
         position: "absolute",
         top: "0",
         zIndex: "-10",
@@ -25,6 +25,30 @@ const styles = {
     //     }
     // }
 
+    '@media (min-width: 450px)': {
+        background: {
+            height: "36%",
+
+
+        },
+
+        // '@media (min-width: 700px)': {
+        //     background: {
+        //         height: "43%",
+
+
+        //     }
+        // },
+        '@media (min-width: 900px)': {
+            background: {
+                height: "39%",
+
+
+            },
+            
+        }
+
+    }
 }
 
 export {

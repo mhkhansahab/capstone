@@ -10,7 +10,7 @@ const TextInput = ({ classes , onChange, onEnter, value}) => {
         variant="outlined"
         size="small"
         className={classes.input}
-        shrink="flase"
+        shrink="false"
         onChange = {(e)=>onChange(e)}
         value = {value}
         onKeyPress={(e)=>onEnter(e)}
