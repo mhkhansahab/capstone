@@ -6,6 +6,8 @@ const styles = {
         position: "relative",
         marginRight: "1%",
         marginLeft: "1%",
+        display: "flex",
+        flexDirection: "column",
         '&::-webkit-scrollbar': {
             display: "none",
           },

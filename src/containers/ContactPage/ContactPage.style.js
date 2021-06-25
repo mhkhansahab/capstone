@@ -28,7 +28,24 @@ const styles = {
         '&::-webkit-scrollbar': {
             display: "none",
           },
-    }
+    },
+    '@media (min-width: 400px)': {
+        contactContainer: {
+            width: "25%",
+            borderRight: "1px solid gray",
+
+        },
+
+            head: {
+                height: "9%",
+                borderRadius: "0",
+
+               
+    
+            },
+            
+        
+        },
 
 
 }

@@ -1,6 +1,8 @@
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
+import RolePage from "./containers/RolePage/RolePage";
+import DesktopView from "./containers/DesktopView/DesktopView";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
@@ -22,7 +24,7 @@ function App() {
 
   return (
       <div className="App">
-      <Switch>  
+      {/* <Switch>  
       {isLoginFromRedux === false ? 
       <Route path = "/"><HomeScreen></HomeScreen></Route>
       :
@@ -31,7 +33,13 @@ function App() {
       <Route path = "/chat"><ChatLayout></ChatLayout></Route>
       </>
       }
-      </Switch>
+      </Switch> */}
+      <HomeScreen/> 
+       {/* <RolePage/> */}
+      {/* <ChatLayout/> */}
+      {/* <DesktopView/> */}
+      {/* <ContactPage/> */}
+      
       </div>
   );
 }

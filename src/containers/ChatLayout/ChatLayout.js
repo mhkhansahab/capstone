@@ -13,18 +13,24 @@ import { getAllUsers } from "./../../store/services/authServices";
 const ChatLayout = ({ classes }) => {
     const dispatch = useDispatch();
     const sender = useSelector((state) => state.userReducer.demoCurrentUser);
-    
+
     useEffect(() => {
         dispatch(getAllUsers());
         dispatch(getYourChats(sender.uid));
-      }, [])
+    }, [])
 
     return (
         <div className={classes.container}>
+            <div className={classes.sideBar}></div>
+            <div className={classes.subContainer}>
             <Header><BackIcon className={classes.icon}/></Header>
             <MessageContainer />
             <Footer />
         </div>
+
+        </div>
+
+
 
     );
 }

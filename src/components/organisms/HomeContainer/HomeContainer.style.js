@@ -8,7 +8,15 @@ const styles = {
         paddingLeft: "25px",
         paddingBottom: "25px",
     
+        },
+        '@media (min-width: 900px)': {
+            container: {
+                margin: "auto",
+                width: "50%",
+            }
+            
         }
+        
     }
 
 export {
