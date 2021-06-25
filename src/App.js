@@ -6,54 +6,66 @@ import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
 import RolePage from "./containers/RolePage/RolePage";
+import Modal from "./containers/Modal/Modal";
 import firebase from "./config/firebaseConfig";
-import {setFirstLogin, setLogin} from "./store/actions/statusActions";
-import { signOut , getUserAndSetData} from "./store/services/authServices";
+import { setFirstLogin, setLogin } from "./store/actions/statusActions";
+import { signOut, getUserAndSetData } from "./store/services/authServices";
 
 function App() {
-
   const dispatch = useDispatch();
   const isLoginFromRedux = useSelector((state) => state.statusReducer.isLogin);
-  const isFirstLoginFromRedux = useSelector((state) => state.statusReducer.isFirstLogin);
+  const isFirstLoginFromRedux = useSelector(
+    (state) => state.statusReducer.isFirstLogin
+  );
 
-    useEffect(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        if(user){
-          const user = JSON.parse(window.localStorage.getItem("loginUser"));
-          dispatch(setLogin(true));
-          getUserAndSetData(user.uid, user, dispatch);
-        }else{
-          dispatch(setLogin(false));
-        }
-      })
-
+  useEffect(() => {
     const loginUser = JSON.parse(window.localStorage.getItem("loginUser"));
-    if(loginUser){
-      if(!loginUser.role){
-        dispatch(setFirstLogin(true))
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(setLogin(true));
+        getUserAndSetData(loginUser.uid, loginUser, dispatch);
+      } else {
+        dispatch(setLogin(false));
+      }
+    });
+
+    if (loginUser) {
+      if (!loginUser.role) {
+        dispatch(setFirstLogin(true));
       }
     }
-  },[]);
+  }, []);
 
   return (
-      <div className="App">
-      <Switch>  
-      {isLoginFromRedux === false ? 
-      <Route path = "/"><HomeScreen></HomeScreen></Route>
-      :
-      <>
-      {
-      isFirstLoginFromRedux ? <Route path="/" exact><RolePage></RolePage></Route> : 
-        <>
-          <Route path = "/" exact><ContactPage></ContactPage></Route>
-          <Route path = "/chat"><ChatLayout></ChatLayout></Route>
-        </>
-        }
-        </>
-      }
+    <div className="App">
+      <Switch>
+        {isLoginFromRedux === false ? (
+          <Route path="/">
+            <HomeScreen></HomeScreen>
+          </Route>
+        ) : (
+          <>
+            {isFirstLoginFromRedux ? (
+              <Route path="/" exact>
+                <RolePage></RolePage>
+              </Route>
+            ) : (
+              
+              <>
+                <Route path="/" exact>
+                  <ContactPage></ContactPage>
+                </Route>
+                <Route path="/chat">
+                  <ChatLayout></ChatLayout>
+                </Route>
+              </>
+            )}
+          </>
+        )}
       </Switch>
-      <button onClick={()=>dispatch(signOut())}>Sign Out</button>
-      </div>
+      <Modal></Modal>
+      <button onClick={() => dispatch(signOut())}>Sign Out</button>
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 import firebase from "./../../config/firebaseConfig";
-import { deleteUser, setAllUsers, setUser } from "../actions/authActions";
-import { setLogin, setFirstLogin } from "../actions/statusActions";
+import { deleteUsers, setAllUsers, setUser } from "../actions/authActions";
+import { setLogin, setFirstLogin, setLoader } from "../actions/statusActions";
+import { deleteChats } from "../actions/chatActions";
 
 export const getAllUsers = () => async (dispatch) => {
   firebase
@@ -30,6 +31,7 @@ export const signIn = () => async (dispatch) => {
         uid: user.uid,
       };
 
+      dispatch(setLoader(true));
       getUserAndSetData(user.uid, signInUser, dispatch);
     })
     .catch((error) => {
@@ -42,8 +44,10 @@ export const signOut = () => async (dispatch) => {
     .auth()
     .signOut()
     .then(() => {
-      dispatch(deleteUser());
+      dispatch(deleteUsers());
+      dispatch(deleteChats());
       dispatch(setFirstLogin(false));
+      dispatch(setLoader(false));
       window.localStorage.removeItem("loginUser");
       alert("Sign Out Successful");
     })
@@ -58,7 +62,7 @@ export const updateUser = (uid, data) => async (dispatch) => {
   dispatch(setUser(data));
 };
 
-export const getUserAndSetData = (id , user, dispatch)=>{
+export const getUserAndSetData = (id , user, dispatch) => {
   getUser(id).then((data) => {
     if (data.exists()) {
       if (data.val().role) {
