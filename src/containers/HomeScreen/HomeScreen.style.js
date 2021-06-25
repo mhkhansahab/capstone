@@ -18,6 +18,12 @@ const styles = {
         zIndex: "-10",
         clipPath: "polygon( 0 0, 100% 0, 100% 100%, 0 calc(100% - 10vw))",
     },
+    
+    // '@media (min-width: 320px)': {
+    //     background: {
+    //         display: "none"
+    //     }
+    // }
 
     '@media (min-width: 450px)': {
         background: {

@@ -4,13 +4,11 @@ import Header from '../../components/organisms/Header/Header'
 import Footer from '../../components/molecules/Footer/Footer'
 import MessageContainer from '../../components/molecules/MessageContainer/MessageContainer';
 import BackIcon from '../../components/atoms/BackIcon/BackIcon';
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getYourChats } from "./../../store/services/chatServices";
-import { getAllUsers } from "./../../store/services/authServices";
-
 
 const ChatLayout = ({ classes }) => {
+<<<<<<< HEAD
+
+=======
     const dispatch = useDispatch();
     const sender = useSelector((state) => state.userReducer.demoCurrentUser);
 
@@ -18,6 +16,7 @@ const ChatLayout = ({ classes }) => {
         dispatch(getAllUsers());
         dispatch(getYourChats(sender.uid));
     }, [])
+>>>>>>> bfb9c52273a1363f4fced8304b28cd8b1f71cf84
 
     return (
         <div className={classes.container}>

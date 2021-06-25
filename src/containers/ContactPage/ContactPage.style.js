@@ -1,8 +1,6 @@
 const styles = {
     contactContainer: {
         height: "100%",
-
-
     },
     head: {
         paddingRight: "3%",
@@ -28,6 +26,13 @@ const styles = {
         '&::-webkit-scrollbar': {
             display: "none",
           },
+    },
+    loaderContainer:{
+        height : "100vh",
+        width : "100%",
+        display: "flex",
+        justifyContent : "center",
+        alignItems : "center"
     },
     '@media (min-width: 400px)': {
         contactContainer: {
