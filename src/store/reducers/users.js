@@ -1,4 +1,4 @@
-import { DELETE_USERS, SET_USER, SET_ALL_USERS } from "../actions/authActions";
+import { DELETE_USERS, SET_USER, SET_ALL_USERS, SET_CHAT_USER } from "../actions/authActions";
 
 const initialState = {
   users: [],
@@ -28,6 +28,11 @@ const reducer = (state = initialState, actions) => {
       return {
         ...state,
         currentUser: payload,
+      };
+    case SET_CHAT_USER:
+      return {
+        ...state,
+        chatUser: payload,
       };
     case DELETE_USERS:
       return {

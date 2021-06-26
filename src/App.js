@@ -14,9 +14,9 @@ import { signOut, getUserAndSetData } from "./store/services/authServices";
 function App() {
   const dispatch = useDispatch();
   const isLoginFromRedux = useSelector((state) => state.statusReducer.isLogin);
-  const isFirstLoginFromRedux = useSelector(
-    (state) => state.statusReducer.isFirstLogin
-  );
+  const isFirstLoginFromRedux = useSelector((state) => state.statusReducer.isFirstLogin);
+  const user = useSelector((state)=>state.userReducer.currentUser);
+  
 
   useEffect(() => {
     const loginUser = JSON.parse(window.localStorage.getItem("loginUser"));
@@ -50,14 +50,20 @@ function App() {
                 <RolePage></RolePage>
               </Route>
             ) : (
-              
               <>
-                <Route path="/" exact>
-                  <ContactPage></ContactPage>
-                </Route>
-                <Route path="/chat">
-                  <ChatLayout></ChatLayout>
-                </Route>
+              { !user ?
+                  <div className="loader-container">
+                    <div className="loader"></div>
+                  </div>
+                  :<>
+                  <Route path="/" exact>
+                    <ContactPage></ContactPage>
+                  </Route>
+                  <Route path="/chat">
+                    <ChatLayout></ChatLayout>
+                  </Route>
+                </>
+                }
               </>
             )}
           </>

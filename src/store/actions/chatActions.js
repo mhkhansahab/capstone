@@ -4,9 +4,16 @@ export const SET_CURRENT_CHAT = "SET_CURRENT_CHAT";
 
 
 export const setChats = (chats) => (dispatch) => {
+    
+    const previousState = [];
+    if(chats !== null){
+        previousState.push(chats);
+    }
+    
+    
     dispatch({
         type : SET_CHATS,
-        payload : chats
+        payload : previousState
     })
 }
 

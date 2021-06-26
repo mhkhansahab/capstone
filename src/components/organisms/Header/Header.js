@@ -9,7 +9,6 @@ const Header = ({classes, ...props}) => {
     return ( 
         <div className={classes.headContainer}>
             {props.children}
-            <ProfileImage/>
         </div>
 
      );

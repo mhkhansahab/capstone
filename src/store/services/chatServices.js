@@ -22,13 +22,8 @@ export const getYourChats = (id) => async (dispatch)=>{
         dispatch(setChats(chats));
     })
 }
- export const initializeCurrentChat = ()=> (dispatch)=>{
-    const chats = useSelector((state)=>state.chatReducer.chats);
-    const chatUser = useSelector((state)=>state.userReducer.demoChatUser);
-  
-    for(const key in chats){
-      if(key.includes(chatUser.uid)){
-        dispatch(setCurrentChat(chats[key]))
-      }
-    }
+ export const initializeCurrentChat = (id)=> (dispatch)=>{
+    firebase.database().ref("/").child(`chats/${id}`).on("value",(snapshot)=>{
+        dispatch(setCurrentChat(snapshot.val()));
+    })
  }

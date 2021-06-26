@@ -1,14 +1,15 @@
 import { styles } from './ContactList.style';
 import { withStyles } from '@material-ui/styles';
-import ProfileImage from '../../atoms/ProfileImage/ProfileImage';
 
 
-const ContactList = ({classes}) => {
+const ContactList = ({classes, name, onClick}) => {
     return ( 
-        <div className={classes.contactContainer}>
-            <ProfileImage/>
-            <p>Anonymous</p>
-
+        <div className={classes.contactContainer} onClick={onClick}>
+            <div className={classes.titleContainer}>
+                <div className={classes.subTitle}>Chat with:</div>
+                <div className={classes.title}>{name}</div>
+            </div>
+            
         </div>
      );
 }

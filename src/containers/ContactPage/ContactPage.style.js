@@ -27,13 +27,6 @@ const styles = {
             display: "none",
           },
     },
-    loaderContainer:{
-        height : "100vh",
-        width : "100%",
-        display: "flex",
-        justifyContent : "center",
-        alignItems : "center"
-    },
     '@media (min-width: 400px)': {
         contactContainer: {
             width: "25%",
