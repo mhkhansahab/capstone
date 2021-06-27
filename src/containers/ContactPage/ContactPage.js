@@ -49,7 +49,7 @@ const ContactPage = ({ classes , history}) => {
       <div className={classes.contactContainer}>
       <div className={classes.head}>
         <Header />
-        <h3>Hello, {user.name}</h3>
+        <h3 className={classes.header}>Hello, {user.name}</h3>
       </div>
       <div className={classes.listContainer}>
         {

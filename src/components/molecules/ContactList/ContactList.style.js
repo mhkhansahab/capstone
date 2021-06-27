@@ -18,11 +18,13 @@ const styles = {
         maxWidth: "90%",
         textOverflow: "ellipsis",
         overflow: "hidden",
-        whiteSpace : "nowrap"
+        whiteSpace : "nowrap",
+        fontFamily : "Lato-Regular"
     },
     subTitle:{
         fontSize: "12px",
-        color:"lightblue"
+        color:"#fff",
+        fontFamily : "Lato-Light"
     },
     }
 

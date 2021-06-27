@@ -24,10 +24,12 @@ const styles = {
     textOverflow: "ellipsis",
     overflow: "hidden",
     whiteSpace: "nowrap",
+    fontFamily : "Lato-Regular"
   },
   subTitle: {
     fontSize: "12px",
-    color: "lightblue",
+    color: "#fff",
+    fontFamily : "Lato-Light"
   },
   btn: {
     background: "white",
@@ -37,6 +39,7 @@ const styles = {
     fontSize: "12px",
     margin: "0 2px",
     borderRadius: "5px",
+    fontFamily : "Lato-Regular"
   },
   disabled: {
     background: "white",
@@ -46,18 +49,20 @@ const styles = {
     fontSize: "12px",
     margin: "0 2px",
     borderRadius: "5px",
+    fontFamily : "Lato-Regular"
   },
   btnContainer: {
     display: "flex",
   },
   question: {
     fontSize: "12px",
-    color: "lightblue",
     textAlign: "left",
     maxWidth: "70%",
     textOverflow: "ellipsis",
     overflow: "hidden",
     whiteSpace: "nowrap",
+    color: "#fff",
+    fontFamily : "Lato-Light"
   },
 };
 

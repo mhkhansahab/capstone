@@ -3,19 +3,19 @@ const styles = {
         height: "100%",
     },
     head: {
-        paddingRight: "3%",
-        paddingLeft: "3%",
         color: "white",
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        width: "94%",
-        height: "9%",
+        width: "100%",
+        height: "10%",
         borderBottom: "1px solid lightgray",
         fontWeight: "800px",
         backgroundImage: "radial-gradient( circle 848.6px at 10% 20%,  rgba(140,58,255,1) 0%, rgba(181,59,253,1) 50.1% )",        
         borderRadius: "0 0 13px 13px"
-
+    },
+    header:{
+        fontFamily : "Oswald-Regular"
     },
     listContainer: {
         width: "98%",

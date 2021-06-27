@@ -6,21 +6,28 @@ const styles = {
         alignContent: "center",
 
         },
-        heading: {
-            margin: "0px",
-            // color: "white"
+        logoContainer:{
+            width : "140px",
+            '& img' : {
+                width : "140px"
+            }
+        },
+        slogan:{
+            fontSize :"18px",
+            fontFamily : "Oswald-Regular",
+            color : "#2A84BD"
         },
         description:{
-            textAlign: "center"
+            textAlign: "center",
+            backgroundColor : "#2A84BD",
+            color : "#fff",
+            fontSize: "16px",
+            width: "fit-content",
+            padding : "10px 40px",
+            borderRadius : "20px",
+            margin : "20px 0",
+            fontFamily : "Lato-Regular"
         },
-        '@media (min-width: 350px)': {
-            heading: {
-                position: "absolute",
-                top: "15%"
-
-            },
-            
-        }
     }
 
 export {
