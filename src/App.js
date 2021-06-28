@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 import "./App.css";
+import DesktopView from "./containers/DesktopView/DesktopView"
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import CounselorContact from "./containers/CounselorContact/ConselorContact";
@@ -74,7 +75,7 @@ function App() {
         )}
       </Switch>
       <Modal></Modal>
-      <button onClick={() => dispatch(signOut())}>Sign Out</button>
+      {/* <button onClick={() => dispatch(signOut())}>Sign Out</button> */}
     </div>
   );
 }

@@ -6,7 +6,6 @@ const styles = {
         alignContent: "center",
 
         },
-<<<<<<< HEAD
         logoContainer:{
             width : "140px",
             '& img' : {
@@ -18,8 +17,6 @@ const styles = {
             fontFamily : "Oswald-Regular",
             color : "#2A84BD"
         },
-=======
->>>>>>> 8e86e072a36158e5dbec7cbc063dad83fde7e7f5
         description:{
             textAlign: "center",
             backgroundColor : "#2A84BD",
@@ -31,10 +28,6 @@ const styles = {
             margin : "20px 0",
             fontFamily : "Lato-Regular"
         },
-<<<<<<< HEAD
-=======
-        
->>>>>>> 8e86e072a36158e5dbec7cbc063dad83fde7e7f5
     }
 
 export {

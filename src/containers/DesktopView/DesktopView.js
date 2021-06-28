@@ -8,7 +8,7 @@ const DesktopView = ({classes}) => {
     return ( 
         <div className={classes.container}>
             <ContactPage/>
-            <ChatLayout/>
+            {/* <ChatLayout/> */}
 
 
         </div>

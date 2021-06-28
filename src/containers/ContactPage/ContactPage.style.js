@@ -1,25 +1,16 @@
 const styles = {
     contactContainer: {
         height: "100%",
-    },
-    head: {
-        color: "white",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        width: "100%",
-        height: "10%",
-        borderBottom: "1px solid lightgray",
-        fontWeight: "800px",
-        backgroundImage: "radial-gradient( circle 848.6px at 10% 20%,  rgba(140,58,255,1) 0%, rgba(181,59,253,1) 50.1% )",        
-        borderRadius: "0 0 13px 13px"
+
     },
     header:{
-        fontFamily : "Oswald-Regular"
+        fontFamily : "Oswald-Regular",
+        textOverflow: "ellipsis" ,
+        color: "white",
     },
     listContainer: {
         width: "98%",
-        height: "80.5%",
+        height: "80%",
         overflowY: "scroll",
         position: "relative",
         marginLeft: "1%",
