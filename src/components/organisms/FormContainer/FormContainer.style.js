@@ -2,11 +2,17 @@ const styles = {
     container: {
         margin: "auto",
         width: "80%",
+        
 
         },
     form: {
         display: "flex",
         flexDirection: "column",
+        justifyContent: "space-between",
+        width: "100%",
+        height: "100%",
+
+
         
     },
     heading: {
