@@ -10,11 +10,12 @@ import { useDispatch , useSelector } from "react-redux";
 import { setFirstLogin } from "../../../store/actions/statusActions";
 import * as yup from 'yup';
 
+
 const FormContainer = ({ classes }) => {
-  const dispatch = useDispatch();
-  const currentUser = useSelector((state)=>state.userReducer.currentUser);
     
-  const validationSchema = yup.object({
+    const dispatch = useDispatch();
+    const currentUser = useSelector((state)=>state.userReducer.currentUser);
+    const validationSchema = yup.object({
         role: yup
             .string('Select your Role')
             .required('Role is required'),
@@ -25,26 +26,31 @@ const FormContainer = ({ classes }) => {
             .number('Enter your age')
             .positive('age must be greater than zero')
             .required('Age is required'),
+        nickname: yup
+            .string('Enter your nick name')
+            .required('Nick name is required'),
 
     });
 
     const formik = useFormik({
-      initialValues: {
-        role: "",
-        gender: "",
-        age: "",
-      },
-      onSubmit: (values) => {
-        const obj = {
-          ...currentUser,
-          role : values.role,
-          gender : values.gender,
-          age : values.age,
-          violation : 0
-        }
-        dispatch(updateUser(currentUser.uid, obj))
-        dispatch(setFirstLogin(false));
-      },
+        initialValues: {
+            role: '',
+            gender: '',
+            age: '',
+            nickname: ''
+        },
+        validationSchema, validationSchema,
+        onSubmit: (values) => {
+            const obj = {
+              ...currentUser,
+              role : values.role,
+              gender : values.gender,
+              age : values.age,
+              nickname: values.nickname
+            }
+            dispatch(updateUser(currentUser.uid, obj))
+            dispatch(setFirstLogin(false));
+          },
     });
 
     return (
@@ -73,7 +79,17 @@ const FormContainer = ({ classes }) => {
                     onChange={formik.handleChange}
                     error={Boolean(formik.errors.age)}
                     helperText={formik.errors.age}
+                    type="number"
+                    label="Your Age"
+
                 />
+                <AgeInput name="name"
+                    value={formik.values.nickname}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.nickname)}
+                    helperText={formik.errors.nickname}
+                    label="Your Nick Name"
+                />                
                 <LoginButton text="Submit" type="Submit">
                 </LoginButton>
             </form>

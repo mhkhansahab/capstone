@@ -25,30 +25,27 @@ const styles = {
         marginLeft: "1%",
         '&::-webkit-scrollbar': {
             display: "none",
-          },
+        },
+    },
+    loaderContainer: {
+        height: "100vh",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
     },
     '@media (min-width: 400px)': {
         contactContainer: {
             width: "25%",
             borderRight: "1px solid gray",
 
-        },
 
-            head: {
-                height: "9%",
-                borderRadius: "0",
+        }
 
-               
-    
-            },
-            
-        
-        },
-
-
+    }
 }
 
 export {
-    styles
-};
+        styles
+    };
 

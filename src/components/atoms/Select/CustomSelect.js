@@ -17,24 +17,24 @@ function CustomSelect({
   helperText
 }) {
 
-    return (
-        <FormControl className={classes.select}>
-        <InputLabel id="demo-simple-select-label">{label}</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={value}
-          onChange={onChange}
-          name={name}
-          helperText={helperText}
-          error={error}
-          
-        >
-          <MenuItem value={value1} >{value1}</MenuItem>
-          <MenuItem value={value2}>{value2}</MenuItem>
-        </Select>
-      </FormControl>
-    );
+  return (
+    <FormControl className={classes.select}>
+      <InputLabel id="demo-simple-select-label">{label}</InputLabel>
+      <Select
+        // labelId="demo-simple-select-label"
+        // id="demo-simple-select"
+        value={value}
+        onChange={onChange}
+        name={name}
+        helperText={helperText}
+        error={error}
+
+      >
+        <MenuItem value={value1} >{value1}</MenuItem>
+        <MenuItem value={value2}>{value2}</MenuItem>
+      </Select>
+    </FormControl>
+  );
 }
 
 export default withStyles(styles)(CustomSelect);

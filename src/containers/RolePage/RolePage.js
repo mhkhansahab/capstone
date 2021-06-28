@@ -10,14 +10,6 @@ const HomeSubContainer = ({ classes }) => {
         <div className={classes.container}>
             <div className={classes.background}></div>
             <FormContainer/>
-            {/* <div className={classes.background}>
-            </div> */}
-            {/* <Card className={classes.subContainer}> */}
-
-
-            {/* </Card> */}
-
-            
         </div>
     );
 }

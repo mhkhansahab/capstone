@@ -12,7 +12,10 @@ import { Link } from 'react-router-dom';
 
 
 const ChatLayout = ({ classes }) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e86e072a36158e5dbec7cbc063dad83fde7e7f5
     const dispatch = useDispatch();
     const sender = useSelector((state) => state.userReducer.currentUser);
 

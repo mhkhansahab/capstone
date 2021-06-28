@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "./App.css";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
+import CounselorContact from "./containers/CounselorContact/ConselorContact";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
 import RolePage from "./containers/RolePage/RolePage";
 import Modal from "./containers/Modal/Modal";
