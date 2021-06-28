@@ -1,10 +1,16 @@
 
 const styles = ({
     button: {
-        height: "30px",
-        background: "radial-gradient( circle 848.6px at 10% 20%,  rgba(140,58,255,1) 0%, rgba(181,59,253,1) 90.1% )",
-        margin: "3px"
-
+        padding:"5px 10px",
+        backgroundColor: "#FFF",
+        color:"#0088CC",
+        margin:"0 2px",
+        width:"fit-content",
+        fontSize:"10px",
+        boxShadow:"none",
+        outline: "none",
+        fontFamily : "Oswald-Regular",
+        letterSpacing : ".6px"
     }
 }
 );

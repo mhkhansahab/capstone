@@ -6,7 +6,7 @@ const TextInput = ({ classes, onChange, onEnter, value }) => {
   return (
     <div>
       <TextField
-        id="outlined-basic" label="Your Message" variant="outlined"
+        id="outlined-basic" label="Your Message..." variant="outlined"
         size="small"
         className={classes.input}
         shrink="false"

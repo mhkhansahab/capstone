@@ -3,6 +3,7 @@ import { styles } from "./ContactPage.style";
 import ContactList from "../../components/molecules/ContactList/ContactList";
 import RequestList from "../../components/molecules/RequestList/RequestList";
 import ContactFooter from "../../components/molecules/ContactFooter/ContactFooter";
+import CounselorFooter from "../../components/molecules/CounselorFooter/CounselorFooter";
 import Header from "../../components/organisms/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -47,7 +48,6 @@ const ContactPage = ({ classes, history }) => {
   return (
     <>
       <div className={classes.contactContainer}>
-        {/* <div className={classes.head}></div> */}
           <Header>
           <h3 className={classes.header}>Hello, {user.name}</h3>            
           </Header>
@@ -101,11 +101,10 @@ const ContactPage = ({ classes, history }) => {
                 })
               }) : null
             }
-            {/* <button onClick={()=>dispatch(setAnalysis("I’m not going",{}))}>get analysis</button> */}
           </div>
         </div>
-
-        <ContactFooter />
+        <CounselorFooter/>
+        {/* <ContactFooter /> */}
       </div>
     </>
   );

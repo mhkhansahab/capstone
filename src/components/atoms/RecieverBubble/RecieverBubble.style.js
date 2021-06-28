@@ -1,20 +1,17 @@
 const styles = {
-    message2:{
-        backgroundColor:"#F0F4F7",
+    reciever:{
+        backgroundColor:"#EEEEEE",
         borderRadius: "25px 25px 25px 0",
         maxwidth: "60%",
         fontSize: "14px",
-        padding: "5px 20px",
+        padding: "0px 14px 0px 14px",
         marginTop: "3px",
-        backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(162,102,246,1) 0%, rgba(203,159,249,1) 90% )",  
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-end",
-        textAlign: "center",
         marginRight: "auto",
-        color:"#fff",
+        color:"#000",
         fontFamily : "Oswald-Light",
-        letterSpacing : ".5px"
+        letterSpacing : ".6px",
+        textAlign : "left",
+        border : "2px solid lightgrey"
 
     }
 }

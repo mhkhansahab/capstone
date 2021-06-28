@@ -5,7 +5,6 @@ import "./App.css";
 import DesktopView from "./containers/DesktopView/DesktopView"
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
-import CounselorContact from "./containers/CounselorContact/ConselorContact";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
 import RolePage from "./containers/RolePage/RolePage";
 import Modal from "./containers/Modal/Modal";
@@ -75,7 +74,7 @@ function App() {
         )}
       </Switch>
       <Modal></Modal>
-      {/* <button onClick={() => dispatch(signOut())}>Sign Out</button> */}
+     
     </div>
   );
 }
