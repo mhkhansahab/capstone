@@ -12,10 +12,6 @@ import { Link } from 'react-router-dom';
 
 
 const ChatLayout = ({ classes }) => {
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e86e072a36158e5dbec7cbc063dad83fde7e7f5
     const dispatch = useDispatch();
     const sender = useSelector((state) => state.userReducer.currentUser);
 
@@ -28,7 +24,11 @@ const ChatLayout = ({ classes }) => {
         <div className={classes.container}>
             <div className={classes.sideBar}></div>
             <div className={classes.subContainer}>
-            <Header><Link to="/"><BackIcon className={classes.icon}/></Link></Header>
+            <Header><Link to="/">
+                <div>
+                <BackIcon className={classes.icon}/>
+                </div>
+                </Link></Header>
             <MessageContainer />
             <Footer />
         </div>
