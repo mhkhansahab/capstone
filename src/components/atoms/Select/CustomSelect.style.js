@@ -1,6 +1,6 @@
 const styles = {
     select: {
-        marginBottom: "20px"
+        // marginBottom: "20px"
 
     }
     

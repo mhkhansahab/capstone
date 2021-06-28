@@ -6,7 +6,6 @@ const styles = {
           },
 
           width: "100%",
-          flex: "1"
 
         },
     }

@@ -20,6 +20,9 @@ const FormContainer = ({ classes }) => {
             .number('Enter your age')
             .positive('age must be greater than zero')
             .required('Age is required'),
+        nickname: yup
+            .string('Enter your nick name')
+            .required('Nick name is required'),
 
     });
 
@@ -29,6 +32,7 @@ const FormContainer = ({ classes }) => {
             role: '',
             gender: '',
             age: '',
+            nickname: ''
         },
         validationSchema, validationSchema,
         onSubmit: (values) => {
@@ -62,7 +66,17 @@ const FormContainer = ({ classes }) => {
                     onChange={formik.handleChange}
                     error={Boolean(formik.errors.age)}
                     helperText={formik.errors.age}
+                    type="number"
+                    label="Your Age"
+
                 />
+                <AgeInput name="name"
+                    value={formik.values.nickname}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.nickname)}
+                    helperText={formik.errors.nickname}
+                    label="Your Nick Name"
+                />                
                 <LoginButton text="Submit" type="Submit">
                 </LoginButton>
             </form>

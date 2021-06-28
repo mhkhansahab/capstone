@@ -10,7 +10,6 @@ const ContactPage = ({classes}) => {
         <div className={classes.contactContainer}>
             <div className={classes.head}>
             <Header/>
-            <h3>Chats</h3>
             </div>
             <div className={classes.listContainer}>
             <ContactList/>
