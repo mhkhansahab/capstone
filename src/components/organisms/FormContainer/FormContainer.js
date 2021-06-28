@@ -39,7 +39,8 @@ const FormContainer = ({ classes }) => {
           ...currentUser,
           role : values.role,
           gender : values.gender,
-          age : values.age
+          age : values.age,
+          violation : 0
         }
         dispatch(updateUser(currentUser.uid, obj))
         dispatch(setFirstLogin(false));

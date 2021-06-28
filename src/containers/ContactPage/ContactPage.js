@@ -6,7 +6,7 @@ import ContactFooter from "../../components/molecules/ContactFooter/ContactFoote
 import Header from "../../components/organisms/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getYourChats, mergeID } from "./../../store/services/chatServices";
+import { getYourChats, mergeID, setAnalysis } from "./../../store/services/chatServices";
 import { getAllUsers } from "./../../store/services/authServices";
 import { acceptRequest, getAllRequests } from "../../store/services/requestServices";
 import { withRouter } from "react-router";
@@ -99,9 +99,10 @@ const ContactPage = ({ classes , history}) => {
             })
           }) : null
         }
-        
+        {/* <button onClick={()=>dispatch(setAnalysis("I’m not going",{}))}>get analysis</button> */}
       </div>
       </div>
+      
       <ContactFooter />
       </div>
     </>
