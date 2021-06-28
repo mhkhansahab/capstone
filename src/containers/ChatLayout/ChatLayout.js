@@ -24,7 +24,11 @@ const ChatLayout = ({ classes }) => {
         <div className={classes.container}>
             <div className={classes.sideBar}></div>
             <div className={classes.subContainer}>
-            <Header><Link to="/"><BackIcon className={classes.icon}/></Link></Header>
+            <Header><Link to="/">
+                <div>
+                <BackIcon className={classes.icon}/>
+                </div>
+                </Link></Header>
             <MessageContainer />
             <Footer />
         </div>

@@ -12,20 +12,20 @@ import { acceptRequest, getAllRequests } from "../../store/services/requestServi
 import { withRouter } from "react-router";
 import { setChatUser } from "../../store/actions/authActions";
 
-const ContactPage = ({ classes , history}) => {
+const ContactPage = ({ classes, history }) => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.userReducer.users);
-  const chats = useSelector((state)=>state.chatReducer.chats);
-  const user = useSelector((state)=>state.userReducer.currentUser);
-  const requests = useSelector((state)=>state.requestReducer.requests);
-  
+  const chats = useSelector((state) => state.chatReducer.chats);
+  const user = useSelector((state) => state.userReducer.currentUser);
+  const requests = useSelector((state) => state.requestReducer.requests);
+
   useEffect(() => {
     dispatch(getAllUsers());
     dispatch(getYourChats(user.uid));
     dispatch(getAllRequests());
   }, []);
 
-  const acceptor = (singleUser, uid, question, requestID)=>{
+  const acceptor = (singleUser, uid, question, requestID) => {
     dispatch(acceptRequest(singleUser, uid, question, requestID));
     dispatch(setChatUser(singleUser));
     const id = mergeID(singleUser.uid, uid);
@@ -47,63 +47,65 @@ const ContactPage = ({ classes , history}) => {
   return (
     <>
       <div className={classes.contactContainer}>
-      <div className={classes.head}>
-        <Header />
-        <h3 className={classes.header}>Hello, {user.name}</h3>
-      </div>
-      <div className={classes.listContainer}>
-        {
-        chats ? chats.map((item)=>{
-          const key = (Object.keys(item))[0];
-          return users.map((element)=>{
-            const userArr = Object.entries(element);
-            return userArr.map((userData)=>{
-              const singleUser = userData[1];
-              if(key.includes(singleUser.uid)){
-                if(user.uid !== singleUser.uid){
-                  return <ContactList name = {singleUser.name} key={singleUser.uid} onClick={()=>goToChat(singleUser)}></ContactList>
-                }
-              }
-            })
-          })}) : null
-        }       
-      
-      <div>
-        { 
-          requests ? requests.map((item)=>{
-            const requestArr = Object.entries(item);
-            const requestID = requestArr[0][0];
-            const requestData = requestArr[0][1];
-            const userID = (requestArr[0][1]).uid;
-            
-            return users.map((element)=>{
-              const userArr = Object.entries(element);
-              return userArr.map((userData)=>{
-                const singleUser = userData[1];
-                if(userID === singleUser.uid){
-                  if(user.uid !== singleUser.uid){
-                    return <RequestList name = {singleUser.name} 
-                    question={requestData.question} 
-                    key={singleUser.uid} 
-                    showMine={false}
-                    onClick={()=>acceptor(singleUser, user.uid, requestData.question, requestID)}></RequestList>
-                  }else{
-                    return <RequestList name = {singleUser.name} 
-                    question={requestData.question} 
-                    key={singleUser.uid} 
-                    showMine={true}
-                    onClick={()=>acceptor(singleUser, user.uid, requestData.question, requestID)}></RequestList>
+        {/* <div className={classes.head}></div> */}
+          <Header>
+          <h3 className={classes.header}>Hello, {user.name}</h3>            
+          </Header>
+        
+        <div className={classes.listContainer}>
+          {
+            chats ? chats.map((item) => {
+              const key = (Object.keys(item))[0];
+              return users.map((element) => {
+                const userArr = Object.entries(element);
+                return userArr.map((userData) => {
+                  const singleUser = userData[1];
+                  if (key.includes(singleUser.uid)) {
+                    if (user.uid !== singleUser.uid) {
+                      return <ContactList name={singleUser.name} key={singleUser.uid} onClick={() => goToChat(singleUser)}></ContactList>
+                    }
                   }
-                }
+                })
               })
-            })
-          }) : null
-        }
-        {/* <button onClick={()=>dispatch(setAnalysis("I’m not going",{}))}>get analysis</button> */}
-      </div>
-      </div>
-      
-      <ContactFooter />
+            }) : null
+          }
+
+          <div>
+            {
+              requests ? requests.map((item) => {
+                const requestArr = Object.entries(item);
+                const requestID = requestArr[0][0];
+                const requestData = requestArr[0][1];
+                const userID = (requestArr[0][1]).uid;
+
+                return users.map((element) => {
+                  const userArr = Object.entries(element);
+                  return userArr.map((userData) => {
+                    const singleUser = userData[1];
+                    if (userID === singleUser.uid) {
+                      if (user.uid !== singleUser.uid) {
+                        return <RequestList name={singleUser.name}
+                          question={requestData.question}
+                          key={singleUser.uid}
+                          showMine={false}
+                          onClick={() => acceptor(singleUser, user.uid, requestData.question, requestID)}></RequestList>
+                      } else {
+                        return <RequestList name={singleUser.name}
+                          question={requestData.question}
+                          key={singleUser.uid}
+                          showMine={true}
+                          onClick={() => acceptor(singleUser, user.uid, requestData.question, requestID)}></RequestList>
+                      }
+                    }
+                  })
+                })
+              }) : null
+            }
+            {/* <button onClick={()=>dispatch(setAnalysis("I’m not going",{}))}>get analysis</button> */}
+          </div>
+        </div>
+
+        <ContactFooter />
       </div>
     </>
   );

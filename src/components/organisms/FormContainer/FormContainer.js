@@ -83,11 +83,12 @@ const FormContainer = ({ classes }) => {
                     label="Your Age"
 
                 />
-                <AgeInput name="name"
+                <AgeInput name="nickname"
                     value={formik.values.nickname}
                     onChange={formik.handleChange}
                     error={Boolean(formik.errors.nickname)}
                     helperText={formik.errors.nickname}
+                    type="text"
                     label="Your Nick Name"
                 />                
                 <LoginButton text="Submit" type="Submit">

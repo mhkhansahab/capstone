@@ -5,12 +5,16 @@ import CustomButton from '../../atoms/CustomButton/CustomButton'
 
 
 
-const Header = ({ classes, ...props}) => {
+const Header = ({ classes,...props }) => {
     return (
         <div className={classes.headContainer}>
             {props.children}
+            <div className={classes.buttonContainer}>
             <CustomButton text="Chats" />
-            <CustomButton text="Requests" />        
+            <CustomButton text="Requests" />
+
+            </div>
+                    
         </div>
 
     );
