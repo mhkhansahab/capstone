@@ -13,9 +13,8 @@ const Footer = ({classes}) => {
     })
 
     const dispatch = useDispatch();
-    const sender = useSelector((state)=>state.userReducer.demoCurrentUser);
-    const reciever = useSelector((state)=>state.userReducer.demoChatUser); 
-    const messageID = mergeID(sender.uid,reciever.uid);
+    const sender = useSelector((state)=>state.userReducer.currentUser);
+    const reciever = useSelector((state)=>state.userReducer.chatUser);
     
     
     const handleChange = (e)=>{
@@ -25,6 +24,7 @@ const Footer = ({classes}) => {
     }
 
     const handleSend = ()=>{
+        const messageID = mergeID(sender.uid,reciever.uid);
         const messageData = {
             ...sender,
             message : message.textMessage

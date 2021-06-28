@@ -32,7 +32,6 @@ const FormContainer = ({ classes }) => {
 
     });
 
-
     const formik = useFormik({
         initialValues: {
             role: '',
@@ -94,7 +93,8 @@ const FormContainer = ({ classes }) => {
                 <LoginButton text="Submit" type="Submit">
                 </LoginButton>
             </form>
-            );
-};
+          </Grid>
+  )
+}
 
 export default withStyles(styles)(FormContainer);

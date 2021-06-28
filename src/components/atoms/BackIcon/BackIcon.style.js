@@ -1,6 +1,6 @@
 const styles = {
     icon:{
-        fill: "white"
+        fill: "white",
     }
     }
 

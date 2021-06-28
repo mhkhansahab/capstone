@@ -8,7 +8,6 @@ const LoginButton = ({ classes, text, type, onClick , ...props }) => {
     <Button
       className={classes.button}
       variant="contained"
-      color="primary"
       size="small"
       type={type}
       onClick={onClick}

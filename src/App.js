@@ -11,10 +11,15 @@ import Modal from "./containers/Modal/Modal";
 import firebase from "./config/firebaseConfig";
 import { setFirstLogin, setLogin } from "./store/actions/statusActions";
 import { signOut, getUserAndSetData } from "./store/services/authServices";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function App() {
   const dispatch = useDispatch();
   const isLoginFromRedux = useSelector((state) => state.statusReducer.isLogin);
+  const isFirstLoginFromRedux = useSelector(
+    (state) => state.statusReducer.isFirstLogin
+  );
+  const user = useSelector((state) => state.userReducer.currentUser);
 
   useEffect(() => {
     const loginUser = JSON.parse(window.localStorage.getItem("loginUser"));
@@ -48,14 +53,21 @@ function App() {
                 <RolePage></RolePage>
               </Route>
             ) : (
-              
               <>
-                <Route path="/" exact>
-                  <ContactPage></ContactPage>
-                </Route>
-                <Route path="/chat">
-                  <ChatLayout></ChatLayout>
-                </Route>
+                {!user ? (
+                  <div className="loader-container">
+                    <div className="loader"><CircularProgress /></div>
+                  </div>
+                ) : (
+                  <>
+                    <Route path="/" exact>
+                      <ContactPage></ContactPage>
+                    </Route>
+                    <Route path="/chat">
+                      <ChatLayout></ChatLayout>
+                    </Route>
+                  </>
+                )}
               </>
             )}
           </>

@@ -11,9 +11,18 @@ const styles = {
         '&::-webkit-scrollbar': {
             display: "none",
           },
-
-        
-
+    },
+    skeletonContainer : {
+        display : "flex",
+        flexDirection : "column"
+    },
+    left : {
+        margin : "5px 0",
+        alignSelf : "flex-start"
+    },
+    right : {
+        margin : "5px 0",
+        alignSelf : "flex-end"
     }
 
 }

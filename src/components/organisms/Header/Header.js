@@ -8,8 +8,12 @@ import CustomButton from '../../atoms/CustomButton/CustomButton'
 const Header = ({ classes, }) => {
     return (
         <div className={classes.headContainer}>
+<<<<<<< HEAD
+            {props.children}
+=======
             <CustomButton text="Chats" />
             <CustomButton text="Requests" />        
+>>>>>>> 8e86e072a36158e5dbec7cbc063dad83fde7e7f5
         </div>
 
     );
