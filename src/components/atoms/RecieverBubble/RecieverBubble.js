@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/styles';
 
 const RecieverBubble = ({classes, text}) => {
     return ( 
-        <div className={classes.message2}>
+        <div className={classes.reciever}>
             <p>{text}</p>
         </div>
      );

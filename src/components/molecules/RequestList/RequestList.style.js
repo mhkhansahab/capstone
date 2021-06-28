@@ -5,12 +5,13 @@ const styles = {
     cursor: "pointer",
     display: "flex",
     padding: "8px",
-    margin: "5px 10px",
-    border: "1px solid lightblue",
+    margin: "10px 10px",
     borderRadius: "10px",
-    background:
-      "radial-gradient( circle farthest-corner at 10% 20%,  rgba(162,102,246,1) 0%, rgba(203,159,249,1) 90% )",
-  },
+    backgroundColor: "#fff",
+    boxShadow: "-1px 0px 33px -16px rgba(0,0,0,0.69)",
+    webkitBoxShadow: "-1px 0px 33px -16px rgba(0,0,0,0.69)",
+    mozBoxShadow: "-1px 0px 33px -16px rgba(0,0,0,0.69)"   
+    },
   titleBtnContainer: {
     display: "flex",
     justifyContent: "space-between",
@@ -18,7 +19,7 @@ const styles = {
   },
   title: {
     fontSize: "16px",
-    color: "white",
+    color: "#8098FF",
     textAlign: "left",
     maxWidth: "90%",
     textOverflow: "ellipsis",
@@ -28,12 +29,12 @@ const styles = {
   },
   subTitle: {
     fontSize: "12px",
-    color: "#fff",
+    color: "#8098FF",
     fontFamily : "Lato-Light"
   },
   btn: {
-    background: "white",
-    color: "blue",
+    background: "#8098FF",
+    color: "#fff",
     width: "fit-content",
     padding: "7px 10px",
     fontSize: "12px",
@@ -42,8 +43,8 @@ const styles = {
     fontFamily : "Lato-Regular"
   },
   disabled: {
-    background: "white",
-    color: "blue",
+    background: "#8098FF",
+    color: "#fff",
     width: "fit-content",
     padding: "7px 10px",
     fontSize: "12px",
@@ -61,7 +62,7 @@ const styles = {
     textOverflow: "ellipsis",
     overflow: "hidden",
     whiteSpace: "nowrap",
-    color: "#fff",
+    color: "#8098FF",
     fontFamily : "Lato-Light"
   },
 };

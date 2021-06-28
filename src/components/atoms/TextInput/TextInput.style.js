@@ -1,13 +1,11 @@
 const styles = {
     input: {
         [`& fieldset`]: {
-            borderRadius: "200px",
-            width: "100%",
+            borderRadius: "10px",
           },
-
-          width: "100%",
-
+          marginLeft : "10px"
         },
+        
     }
 
 export {

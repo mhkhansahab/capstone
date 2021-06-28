@@ -7,6 +7,7 @@ const styles = {
         marginRight: "1%",
         marginLeft: "1%",
         display: "flex",
+        backgroundColor:"#F6FAFD",
         flexDirection: "column",
         '&::-webkit-scrollbar': {
             display: "none",

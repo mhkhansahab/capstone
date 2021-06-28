@@ -1,12 +1,14 @@
 const styles = {
     contactContainer: {
         height: "100%",
+        backgroundColor:"#F6FAFD"
 
     },
     header:{
         fontFamily : "Oswald-Regular",
         textOverflow: "ellipsis" ,
         color: "white",
+        letterSpacing : ".6px"
     },
     listContainer: {
         width: "98%",

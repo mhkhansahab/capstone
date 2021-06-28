@@ -4,16 +4,18 @@ const styles = {
     height: "45px",
     display: "flex",
     padding: "8px",
-    margin : "5px 10px",
+    margin : "10px 10px",
     flexDirection: "row",
     alignItems: "center",
-    border: "1px solid lightblue",
     borderRadius: "10px",
-    background : "radial-gradient( circle farthest-corner at 10% 20%,  rgba(162,102,246,1) 0%, rgba(203,159,249,1) 90% )"
+    backgroundColor: "#fff",
+    boxShadow: "-1px 0px 33px -16px rgba(0,0,0,0.69)",
+    webkitBoxShadow: "-1px 0px 33px -16px rgba(0,0,0,0.69)",
+    mozBoxShadow: "-1px 0px 33px -16px rgba(0,0,0,0.69)"    
 },
     title:{
         fontSize : "16px",
-        color: "white",
+        color: "#8098FF",
         textAlign: "left",
         maxWidth: "90%",
         textOverflow: "ellipsis",
@@ -23,7 +25,7 @@ const styles = {
     },
     subTitle:{
         fontSize: "12px",
-        color:"#fff",
+        color:"#8098FF",
         fontFamily : "Lato-Light"
     },
     }

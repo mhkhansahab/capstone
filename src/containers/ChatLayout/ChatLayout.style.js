@@ -4,7 +4,8 @@ const styles = ({
         justifyContent: "space-between",
         position: "relative",
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
+        backgroundColor: "#F6FAFD"
         
     },
     subContainer: {

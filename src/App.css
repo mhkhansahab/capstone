@@ -26,6 +26,7 @@ html, body, .App {
   display: flex;
   justify-content : center;
   align-items : center;
+  background-color: #F6FAFD;
 }
 
 
