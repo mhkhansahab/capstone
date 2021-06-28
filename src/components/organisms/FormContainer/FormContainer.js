@@ -1,14 +1,20 @@
-import Grid from '@material-ui/core/Grid';
-import CustomSelect from '../../atoms/Select/CustomSelect';
-import AgeInput from '../../atoms/AgeInput/AgeInput';
-import LoginButton from '../../atoms/LoginButton/LoginButton';
-import { styles } from './FormContainer.style';
-import { withStyles } from '@material-ui/styles';
-import { useFormik } from 'formik';
+import Grid from "@material-ui/core/Grid";
+import CustomSelect from "../../atoms/Select/CustomSelect";
+import AgeInput from "../../atoms/AgeInput/AgeInput";
+import LoginButton from "../../atoms/LoginButton/LoginButton";
+import { styles } from "./FormContainer.style";
+import { withStyles } from "@material-ui/styles";
+import { useFormik } from "formik";
+import {updateUser} from "./../../../store/services/authServices";
+import { useDispatch , useSelector } from "react-redux";
+import { setFirstLogin } from "../../../store/actions/statusActions";
 import * as yup from 'yup';
 
 
 const FormContainer = ({ classes }) => {
+    
+    const dispatch = useDispatch();
+    const currentUser = useSelector((state)=>state.userReducer.currentUser);
     const validationSchema = yup.object({
         role: yup
             .string('Select your Role')
@@ -36,8 +42,16 @@ const FormContainer = ({ classes }) => {
         },
         validationSchema, validationSchema,
         onSubmit: (values) => {
-            console.log(JSON.stringify(values, null, 2));
-        },
+            const obj = {
+              ...currentUser,
+              role : values.role,
+              gender : values.gender,
+              age : values.age,
+              nickname: values.nickname
+            }
+            dispatch(updateUser(currentUser.uid, obj))
+            dispatch(setFirstLogin(false));
+          },
     });
 
     return (
@@ -80,10 +94,7 @@ const FormContainer = ({ classes }) => {
                 <LoginButton text="Submit" type="Submit">
                 </LoginButton>
             </form>
-
-
-        </Grid>
-    );
-}
+            );
+};
 
 export default withStyles(styles)(FormContainer);

@@ -1,5 +1,5 @@
 export const SET_USER = "SET_USER";
-export const DELETE_USER = "DELETE_USER";
+export const DELETE_USERS = "DELETE_USERS";
 export const SET_ALL_USERS = "GET_ALL_USERS";
 
 export const setUser = (user)=>(dispatch)=>{
@@ -8,9 +8,9 @@ export const setUser = (user)=>(dispatch)=>{
         payload: user,
       });
 }
-export const deleteUser = ()=>(dispatch)=>{
+export const deleteUsers = ()=>(dispatch)=>{
     dispatch({
-        type: DELETE_USER,
+        type: DELETE_USERS,
       });
 }
 

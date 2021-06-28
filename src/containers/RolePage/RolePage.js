@@ -8,15 +8,8 @@ const HomeSubContainer = ({ classes }) => {
 
     return (
         <div className={classes.container}>
-            {/* <div className={classes.background}>
-            </div> */}
-            {/* <Card className={classes.subContainer}> */}
-            <FormContainer />
-
-
-            {/* </Card> */}
-
-            
+            <div className={classes.background}></div>
+            <FormContainer/>
         </div>
     );
 }
