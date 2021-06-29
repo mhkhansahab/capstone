@@ -31,6 +31,7 @@ export const signIn = () => async (dispatch) => {
         uid: user.uid,
       };
 
+      window.localStorage.setItem("loginUser",JSON.stringify(signInUser));
       dispatch(setLoader(true));
       getUserAndSetData(user.uid, signInUser, dispatch);
     })

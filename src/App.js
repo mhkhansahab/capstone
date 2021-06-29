@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 import "./App.css";
-import DesktopScreen from "./containers/DesktopScreen/DesktopScreen";
+// import DesktopScreen from "./containers/DesktopScreen/DesktopScreen";
+import DesktopView from "./containers/DesktopView/DesktopView";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
@@ -10,11 +11,9 @@ import RolePage from "./containers/RolePage/RolePage";
 import Modal from "./containers/Modal/Modal";
 import firebase from "./config/firebaseConfig";
 import { setFirstLogin, setLogin } from "./store/actions/statusActions";
-import { getUserAndSetData } from "./store/services/authServices";
+import { getUserAndSetData, signOut } from "./store/services/authServices";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import {setAnalysis} from "./store/services/chatServices";
 import {
-  isBrowser,
   isMobile
 } from "react-device-detect";
 
@@ -28,6 +27,13 @@ function App() {
 
   useEffect(() => {
     const loginUser = JSON.parse(window.localStorage.getItem("loginUser"));
+    
+    if (loginUser) {
+      if (!loginUser.role) {
+        dispatch(setFirstLogin(true));
+      }
+    }
+
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         dispatch(setLogin(true));
@@ -37,11 +43,6 @@ function App() {
       }
     });
 
-    if (loginUser) {
-      if (!loginUser.role) {
-        dispatch(setFirstLogin(true));
-      }
-    }
   }, []);
 
   return (
@@ -73,8 +74,7 @@ function App() {
                         <Route path="/chat">
                           <div className="chat-container"><ChatLayout></ChatLayout></div>
                         </Route>
-                      </> :
-                      <DesktopScreen />
+                      </> : <DesktopView />
                     }
 
                   </>
@@ -85,7 +85,7 @@ function App() {
         )}
       </Switch>
       <Modal></Modal>
-
+      {/* <button onClick={()=>dispatch(signOut())}>Sign Out</button> */}
     </div>
   );
 }
