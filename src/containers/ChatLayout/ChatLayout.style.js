@@ -8,8 +8,6 @@ const styles = ({
         backgroundColor: "#F6FAFD",
         width: "100%",
         minWidth: "320px",
-        maxWidth: "320px",
-        maxHeight: "680px",
         margin: "0 auto",
         borderRight: "1px solid lightgray",
         borderLeft: "1px solid lightgray",
@@ -35,20 +33,6 @@ const styles = ({
 
     },
     
-
-    '@media (min-width: 800px)': {
-        container: {
-            width: "75%",
-            maxWidth: "1000px"
-
-
-
-        },
-
-
-    },
-
-
 }
 );
 

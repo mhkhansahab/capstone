@@ -12,11 +12,7 @@ const styles = {
         color: "white",
         backgroundColor:"#8098FF"
     },
-    '@media (min-width: 400px)': {
-        container: {
-            width: "25%",
-        },
-    }
+    
     
 }
 

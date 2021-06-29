@@ -15,7 +15,9 @@ const MessageContainer = ({ classes, ...props }) => {
   const currentUser = useSelector((state) => state.userReducer.currentUser);
 
   useEffect(() => {
-    dispatch(initializeCurrentChat(id));
+    if(id){
+      dispatch(initializeCurrentChat(id));
+    }
   }, []);
 
   return (

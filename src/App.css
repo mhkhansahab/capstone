@@ -19,6 +19,7 @@ html, body, .App {
     margin: 0;
     padding: 0;
     height: 100vh;
+    background-color: #F6FAFD;
 }
 
 .loader-container{
@@ -30,6 +31,10 @@ html, body, .App {
   background-color: #F6FAFD;
 }
 
-
+.chat-container{
+  max-width: 400px;
+  margin: 0 auto;
+  height: 100%;
+}
 
  

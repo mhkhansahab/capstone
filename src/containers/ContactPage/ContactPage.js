@@ -11,6 +11,7 @@ import {
   getYourChats,
   mergeID,
   setAnalysis,
+  initializeCurrentChat
 } from "./../../store/services/chatServices";
 import { getAllUsers } from "./../../store/services/authServices";
 import {
@@ -38,6 +39,7 @@ const ContactPage = ({ classes, history, ...props }) => {
     dispatch(acceptRequest(singleUser, uid, question, requestID));
     dispatch(setChatUser(singleUser));
     const id = mergeID(singleUser.uid, uid);
+    dispatch(initializeCurrentChat(id));
     history.push({
       pathname: "/chat",
       search: `?id=${id}`,
@@ -47,6 +49,7 @@ const ContactPage = ({ classes, history, ...props }) => {
   const goToChat = (userData) => {
     dispatch(setChatUser(userData));
     const id = mergeID(userData.uid, user.uid);
+    dispatch(initializeCurrentChat(id));
     history.push({
       pathname: "/chat",
       search: `?id=${id}`,

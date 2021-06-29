@@ -9,9 +9,7 @@ import { getAllUsers } from '../../store/services/authServices';
 import { getYourChats } from "./../../store/services/chatServices";
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {
-    isMobile
-} from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 
 const ChatLayout = ({ classes }) => {
@@ -34,8 +32,7 @@ const ChatLayout = ({ classes }) => {
                             </div>
                         </Link>
                     </Header>:
-                    <div className={classes.header}>
-
+                    <div className={classes.header}> 
                     </div>
                 }
 

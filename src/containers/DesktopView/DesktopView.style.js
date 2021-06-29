@@ -18,7 +18,10 @@ const styles = {
         borderRadius: "10px",
         maxHeight: "700px",
 
-        }
+        },
+    desktopContactLayout:{
+        maxWidth:"320px"
+    }
     }
 
 export {

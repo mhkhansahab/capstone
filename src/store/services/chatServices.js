@@ -35,23 +35,23 @@ export const initializeCurrentChat = (id) => (dispatch) => {
 };
 
 export const getAnalysis = async (data) => {
+  const obj = {
+    text: data
+  }
   try{
       const response = await fetch(
-          // "https://textblob-sentiment-analysis.herokuapp.com/analyze",
-          "http://localhost:8000/analyze",
+        "https://textblob-sentiment-analysis.herokuapp.com/analyze",
           {
             method: "POST",
             headers: {
-              "content-type": "application/json",
+              "Content-Type": "application/json",
               "Access-Control-Allow-Origin" : "*"
               },
-            body: {
-              text: data,
-            },
+            body: JSON.stringify(obj),
           }
         );
-    //const jsonResponse = await response.json();
-    return response;
+    const jsonResponse = await response.json();
+    return jsonResponse;
   }catch(error){
       console.log(error);
   }
@@ -59,10 +59,11 @@ export const getAnalysis = async (data) => {
 
 export const setAnalysis = (data, user) => async () => {
     const analysis = await getAnalysis(data);
-    console.log(analysis);
-
-    // firebase.database().ref("/").child(`users/${user.uid}`).update({
-    //     ...user,
-    //     violation : user.violation + 1
-    // })
+    console.log(analysis)
+    if(analysis.polarity <= -0.3){
+      firebase.database().ref("/").child(`users/${user.uid}`).update({
+        ...user,
+        violation : user.violation + 1
+    })
+    }
 };
