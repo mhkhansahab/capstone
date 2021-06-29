@@ -11,10 +11,7 @@ const HomeSubContainer = ({ classes }) => {
       <div className={classes.slogan}>Divine Healing!</div>
 
       <div className={classes.description}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
-        quidem labore error, quaerat tempora explicabo, exercitationem expedita
-        animi laudantium fuga mollitia ex, fugiat incidunt porro eius? Nulla
-        earum incidunt nesciunt.
+        Get in touch with professional licensed counselors to heal your mind from the everyday worries. Our community guarantees you the fastest response.
       </div>
     </div>
   );

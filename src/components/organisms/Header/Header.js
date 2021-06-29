@@ -1,9 +1,7 @@
 import { styles } from './Header.style';
 import { withStyles } from '@material-ui/styles';
 import CustomButton from '../../atoms/CustomButton/CustomButton'
-// import BackIcon from '../../atoms/BackIcon/BackIcon'
 import { withRouter } from "react-router";
-
 
 const Header = ({ classes, history, ...props}) => {
 
@@ -22,10 +20,10 @@ const Header = ({ classes, history, ...props}) => {
     }
 
 
-
     return (
         <div className={classes.headContainer}>
             {props.children}
+
             <div className={classes.buttonContainer}>
             <CustomButton text="Chats" onClick={()=>gotoChats()}/>
             <CustomButton text="Requests" onClick={()=>gotoRequests()}/>
