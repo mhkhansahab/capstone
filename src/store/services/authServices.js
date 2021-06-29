@@ -2,6 +2,7 @@ import firebase from "./../../config/firebaseConfig";
 import { deleteUsers, setAllUsers, setUser } from "../actions/authActions";
 import { setLogin, setFirstLogin, setLoader } from "../actions/statusActions";
 import { deleteChats } from "../actions/chatActions";
+import { deleteAllRequests } from "../actions/requestActions";
 
 export const getAllUsers = () => async (dispatch) => {
   firebase
@@ -47,10 +48,10 @@ export const signOut = () => async (dispatch) => {
     .then(() => {
       dispatch(deleteUsers());
       dispatch(deleteChats());
+      dispatch(deleteAllRequests());
       dispatch(setFirstLogin(false));
       dispatch(setLoader(false));
       window.localStorage.removeItem("loginUser");
-      alert("Sign Out Successful");
     })
     .catch((error) => {
       console.log(error);

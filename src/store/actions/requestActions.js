@@ -1,4 +1,5 @@
 export const GET_REQUESTS = "GET_REQUESTS";
+export const DELETE_REQUESTS = "DELETE_REQUESTS";
 
 export const setAllRequests = (requests) => (dispatch) => {
     const previousState = [];
@@ -9,5 +10,12 @@ export const setAllRequests = (requests) => (dispatch) => {
     dispatch({
         type : GET_REQUESTS,
         payload : previousState
+    })
+}
+
+export const deleteAllRequests = () => (dispatch) => {
+     
+    dispatch({
+        type : DELETE_REQUESTS,
     })
 }

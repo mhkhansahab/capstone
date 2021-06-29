@@ -10,8 +10,7 @@ import { useEffect } from "react";
 import {
   getYourChats,
   mergeID,
-  setAnalysis,
-  initializeCurrentChat
+  initializeCurrentChat,
 } from "./../../store/services/chatServices";
 import { getAllUsers } from "./../../store/services/authServices";
 import {
@@ -64,10 +63,11 @@ const ContactPage = ({ classes, history, ...props }) => {
         </Header>
 
         <div className={classes.listContainer}>
-          {section !== "requests" ? 
-          <div>
-           {chats.length !== 0
-              ? chats.map((item) => {
+          {section !== "requests" ? (
+            <div>
+              {chats.length !== 0 ? (
+                chats.map((item) => {
+                  // console.log(chats)
                   const key = Object.keys(item)[0];
                   return users.map((element) => {
                     const userArr = Object.entries(element);
@@ -87,72 +87,74 @@ const ContactPage = ({ classes, history, ...props }) => {
                     });
                   });
                 })
-              : <div className={classes.emptyDiv}>No Chats Available</div>}
-          </div>
-          :
-          <div>
-            {requests.length !== 0 && user.role === "Counselor"
-              ? requests.map((item) => {
+              ) : (
+                <div className={classes.emptyDiv}>No Chats Available</div>
+              )}
+            </div>
+          ) : (
+            <div>
+              {requests.length !== 0 ? (
+                requests.map((item) => {
                   const requestArr = Object.entries(item);
-                  const requestID = requestArr[0][0];
-                  const requestData = requestArr[0][1];
-                  const userID = requestArr[0][1].uid;
 
-                  return users.map((element) => {
-                    const userArr = Object.entries(element);
-                    return userArr.map((userData) => {
-                      const singleUser = userData[1];
-                      if (userID === singleUser.uid) {
-                        if (user.uid !== singleUser.uid) {
-                          return (
-                            <RequestList
-                              name={singleUser.nickname}
-                              question={requestData.question}
-                              key={singleUser.uid}
-                              showMine={false}
-                              onClick={() =>
-                                acceptor(
-                                  singleUser,
-                                  user.uid,
-                                  requestData.question,
-                                  requestID
-                                )
-                              }
-                            ></RequestList>
-                          );
-                        } else {
-                          return (
-                            <RequestList
-                              name={singleUser.nickname}
-                              question={requestData.question}
-                              key={singleUser.uid}
-                              showMine={true}
-                              onClick={() =>
-                                acceptor(
-                                  singleUser,
-                                  user.uid,
-                                  requestData.question,
-                                  requestID
-                                )
-                              }
-                            ></RequestList>
-                          );
+                  return requestArr.map((singleRequest) => {
+                    const requestID = singleRequest[0];
+                    const requestData = singleRequest[1];
+                    const userID = requestData.uid;
+
+                    return users.map((element) => {
+                      const userArr = Object.entries(element);
+                      return userArr.map((userData) => {
+                        const singleUser = userData[1];
+
+                        if (userID === singleUser.uid) {
+                          if (user.uid !== singleUser.uid) {
+                            return user.role === "User" ? null : (
+                              <RequestList
+                                name={singleUser.nickname}
+                                question={requestData.question}
+                                key={singleUser.uid}
+                                showMine={false}
+                                onClick={() =>
+                                  acceptor(
+                                    singleUser,
+                                    user.uid,
+                                    requestData.question,
+                                    requestID
+                                  )
+                                }
+                              ></RequestList>
+                            );
+                          } else {
+                            return (
+                              <RequestList
+                                name={singleUser.nickname}
+                                question={requestData.question}
+                                key={singleUser.uid}
+                                showMine={true}
+                                onClick={() =>
+                                  acceptor(
+                                    singleUser,
+                                    user.uid,
+                                    requestData.question,
+                                    requestID
+                                  )
+                                }
+                              ></RequestList>
+                            );
+                          }
                         }
-                      }
+                      });
                     });
                   });
                 })
-              : <div className={classes.emptyDiv}>No Request Available</div>
-              }
-          </div>
-          }
+              ) : (
+                <div className={classes.emptyDiv}>No Request Available</div>
+              )}
+            </div>
+          )}
         </div>
-        {
-        user.role === "Counselor" ? 
-        <CounselorFooter/>
-        :
-        <ContactFooter />
-        }
+        {user.role === "Counselor" ? <CounselorFooter /> : <ContactFooter />}
       </div>
     </>
   );

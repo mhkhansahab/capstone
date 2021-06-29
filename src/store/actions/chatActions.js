@@ -3,10 +3,17 @@ export const DELETE_CHATS = "DELETE_CHATS";
 export const SET_CURRENT_CHAT = "SET_CURRENT_CHAT";
 
 
-export const setChats = (chat) => (dispatch) => {
-    
-    const previousState = [];
-    if(chat !== null){
+export const setChats = (chat) => (dispatch, getState) => {
+    let flag = false;
+    const previousState = [...getState().chatReducer.chats];
+    const key = Object.keys(chat)[0];
+    previousState.forEach((item)=>{
+        const itemKey = Object.keys(item)[0];
+        if(key === itemKey){
+            flag = true;
+        }
+    })
+    if(chat !== null && flag === false){
         previousState.push(chat);
     }
     
