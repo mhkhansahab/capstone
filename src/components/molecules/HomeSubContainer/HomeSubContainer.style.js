@@ -19,8 +19,7 @@ const styles = {
         },
         description:{
             textAlign: "center",
-            backgroundColor : "#2A84BD",
-            color : "#fff",
+            color : "#2A84BD",
             fontSize: "16px",
             width: "fit-content",
             padding : "10px 40px",

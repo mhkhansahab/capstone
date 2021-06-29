@@ -1,6 +1,5 @@
 import { styles } from './ChatLayout.style';
 import { withStyles } from '@material-ui/styles';
-import Header from '../../components/organisms/Header/Header'
 import Footer from '../../components/molecules/Footer/Footer'
 import MessageContainer from '../../components/molecules/MessageContainer/MessageContainer';
 import BackIcon from '../../components/atoms/BackIcon/BackIcon';
@@ -25,15 +24,14 @@ const ChatLayout = ({ classes }) => {
             <div className={classes.sideBar}></div>
             <div className={classes.subContainer}>
                 {isMobile ?
-                    <Header>
+                    <div className={classes.header}>
                         <Link to="/">
                             <div className={classes.icon}>
                                 <BackIcon />
                             </div>
                         </Link>
-                    </Header>:
-                    <div className={classes.header}> 
-                    </div>
+                    </div> :
+                    <div className={classes.header}></div>
                 }
 
                 <MessageContainer />

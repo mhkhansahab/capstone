@@ -16,7 +16,10 @@ const styles = {
         
     },
     heading: {
-        textAlign: "center"
+        textAlign: "center",
+        margin: "0",
+        color: "#8098FF",    
+
 
     },
     '@media (min-width: 350px)': {
@@ -27,9 +30,10 @@ const styles = {
         },
         '@media (min-width: 600px)': {
             container: {
-                width: "35%",
+                width: "80%",
         
                 },
+                
             }
     }
 

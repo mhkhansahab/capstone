@@ -29,7 +29,10 @@ const styles = ({
     header: {
         backgroundColor: "#8098FF",
         padding: "0px 10px",
-        height: "10%"
+        height: "10%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
 
     },
     
