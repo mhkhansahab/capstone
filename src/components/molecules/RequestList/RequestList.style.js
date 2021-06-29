@@ -65,6 +65,15 @@ const styles = {
     color: "#8098FF",
     fontFamily : "Lato-Light"
   },
+  '@media (min-width: 600px)': {
+    btn: {
+      width: "25px",
+      fontSize: "9px",
+      padding: "6px 9px",
+
+    },
+    
+    },
 };
 
 export { styles };
