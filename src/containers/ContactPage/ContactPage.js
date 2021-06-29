@@ -103,8 +103,8 @@ const ContactPage = ({ classes, history }) => {
             }
           </div>
         </div>
-        <CounselorFooter/>
-        {/* <ContactFooter /> */}
+        {/* <CounselorFooter/> */}
+        <ContactFooter />
       </div>
     </>
   );

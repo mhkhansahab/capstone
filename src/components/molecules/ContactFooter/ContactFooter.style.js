@@ -23,10 +23,8 @@ const styles = {
 
     },
 
-    '@media (min-width: 400px)': {
-        footer: {
-            width: "25%",
-        },
+    '@media (min-width: 500px)': {
+        
     }
 }
 

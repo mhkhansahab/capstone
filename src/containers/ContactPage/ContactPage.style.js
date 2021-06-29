@@ -1,21 +1,22 @@
 const styles = {
     contactContainer: {
         height: "100%",
-        backgroundColor:"#F6FAFD"
+        backgroundColor:"#F6FAFD",
+        position: "relative",
+        minWidth: "320px",
+        margin: "0 auto",
+        maxHeight: "700px",
 
     },
     header:{
-        fontFamily : "Oswald-Regular",
-        textOverflow: "ellipsis" ,
-        color: "white",
-        letterSpacing : ".6px"
+        display: "flex",
+        flexDirection: "row",
+
     },
     listContainer: {
-        width: "98%",
         height: "80%",
         overflowY: "scroll",
         position: "relative",
-        marginLeft: "1%",
         '&::-webkit-scrollbar': {
             display: "none",
         },
@@ -30,7 +31,9 @@ const styles = {
     '@media (min-width: 400px)': {
         contactContainer: {
             width: "25%",
-            borderRight: "1px solid gray",
+            borderRight: "1px solid lightgray",
+            borderLeft: "1px solid lightgray",
+
 
 
         }

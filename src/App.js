@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 import "./App.css";
-import DesktopView from "./containers/DesktopView/DesktopView"
+import DesktopScreen from "./containers/DesktopScreen/DesktopScreen";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
@@ -12,6 +12,10 @@ import firebase from "./config/firebaseConfig";
 import { setFirstLogin, setLogin } from "./store/actions/statusActions";
 import { signOut, getUserAndSetData } from "./store/services/authServices";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import {
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 function App() {
   const dispatch = useDispatch();
@@ -60,12 +64,21 @@ function App() {
                   </div>
                 ) : (
                   <>
-                    <Route path="/" exact>
-                      <ContactPage></ContactPage>
-                    </Route>
-                    <Route path="/chat">
-                      <ChatLayout></ChatLayout>
-                    </Route>
+                    {isMobile ?
+                      <>
+                        <Route path="/" exact>
+                          <ContactPage></ContactPage>
+                        </Route>
+                        <Route path="/chat">
+                          <ChatLayout></ChatLayout>
+                        </Route>
+                      </> :
+                      <DesktopScreen />
+
+
+                    }
+
+
                   </>
                 )}
               </>
@@ -74,7 +87,7 @@ function App() {
         )}
       </Switch>
       <Modal></Modal>
-     
+
     </div>
   );
 }

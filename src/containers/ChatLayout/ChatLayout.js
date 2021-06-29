@@ -6,9 +6,12 @@ import MessageContainer from '../../components/molecules/MessageContainer/Messag
 import BackIcon from '../../components/atoms/BackIcon/BackIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllUsers } from '../../store/services/authServices';
-import {getYourChats} from "./../../store/services/chatServices";
+import { getYourChats } from "./../../store/services/chatServices";
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {
+    isMobile
+} from "react-device-detect";
 
 
 const ChatLayout = ({ classes }) => {
@@ -24,14 +27,22 @@ const ChatLayout = ({ classes }) => {
         <div className={classes.container}>
             <div className={classes.sideBar}></div>
             <div className={classes.subContainer}>
-            <Header><Link to="/">
-                <div>
-                <BackIcon className={classes.icon}/>
-                </div>
-                </Link></Header>
-            <MessageContainer />
-            <Footer />
-        </div>
+                {isMobile ?
+                    <Header>
+                        <Link to="/">
+                            <div className={classes.icon}>
+                                <BackIcon />
+                            </div>
+                        </Link>
+                    </Header>:
+                    <div className={classes.header}>
+
+                    </div>
+                }
+
+                <MessageContainer />
+                <Footer />
+            </div>
 
         </div>
 
