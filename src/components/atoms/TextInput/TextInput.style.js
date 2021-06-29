@@ -5,6 +5,8 @@ const styles = {
         },
         marginLeft: "10px",
         width: "70%",
+        boxShadow: "0 10px 6px -8px lightgray"
+
 
     },
     '@media (min-width: 400px)': {
@@ -15,6 +17,7 @@ const styles = {
 
             },
             width: "70%",
+        
 
 
 

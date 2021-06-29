@@ -7,11 +7,13 @@ const styles = {
         marginTop: "3px",
         marginLeft: "auto",
         color:"#000",
-        fontFamily : "Oswald-Light",
+        fontFamily : "Roboto-Light",
         letterSpacing : ".6px",
         textAlign : "left",
         border: "2px solid #bde0fe",
         backgroundColor: "#fff",
+        boxShadow: "0 10px 6px -6px lightgray"
+
     }
 }
 

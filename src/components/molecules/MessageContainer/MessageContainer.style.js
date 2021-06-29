@@ -22,7 +22,7 @@ const styles = {
     },
     right : {
         margin : "5px 0",
-        alignSelf : "flex-end"
+        alignSelf : "flex-end",
     }
 
 }

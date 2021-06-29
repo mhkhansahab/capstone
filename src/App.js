@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "./App.css";
 // import DesktopScreen from "./containers/DesktopScreen/DesktopScreen";
 import DesktopView from "./containers/DesktopView/DesktopView";
+import ViolationPage from "./containers/ViolationPage/ViolationPage";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
@@ -74,7 +75,9 @@ function App() {
                         <Route path="/chat">
                           <div className="chat-container"><ChatLayout></ChatLayout></div>
                         </Route>
-                      </> : <DesktopView />
+                      </> : 
+                      <DesktopView />
+                      // <ViolationPage/>
                     }
 
                   </>

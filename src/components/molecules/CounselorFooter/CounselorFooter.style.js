@@ -10,8 +10,12 @@ const styles = {
         position: "absolute",
         bottom: "0",
         color: "white",
-        backgroundColor:"#8098FF"
+        backgroundColor:"#8098FF",
+        fontFamily : "Roboto-Regular",
     },
+    icon: {
+        cursor: "pointer"
+    }
     
     
 }

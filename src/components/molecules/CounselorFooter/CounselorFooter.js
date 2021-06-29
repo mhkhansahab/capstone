@@ -9,7 +9,7 @@ const CounselorFooter = ({classes}) => {
     return ( 
         <div className={classes.container} onClick={() => dispatch(signOut())}>
                 <p>Logout</p>
-                <ExitToAppIcon />
+                <ExitToAppIcon className={classes.icon}/>
         </div>
      );
 }
