@@ -3,9 +3,9 @@ const styles = ({
     button: {
         height: "40px",
         marginTop: "20px",
-        color: "#2A84BD",
+        color: "#647AFE",
         backgroundColor: "white",
-        border : "1px solid #2A84BD",
+        border : "1px solid #647AFE",
         fontFamily : "Lato-Regular"
         },
     }

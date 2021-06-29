@@ -1,6 +1,6 @@
 import { styles } from "./HomeSubContainer.style";
 import { withStyles } from "@material-ui/styles";
-import logo from "./../../../assets/rahbar-logo3.png";
+import logo from "./../../../assets/rahbar-logo.png";
 
 const HomeSubContainer = ({ classes }) => {
   return (

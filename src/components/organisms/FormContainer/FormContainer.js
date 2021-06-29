@@ -15,6 +15,7 @@ const FormContainer = ({ classes }) => {
     
     const dispatch = useDispatch();
     const currentUser = useSelector((state)=>state.userReducer.currentUser);
+    
     const validationSchema = yup.object({
         role: yup
             .string('Select your Role')
@@ -46,7 +47,8 @@ const FormContainer = ({ classes }) => {
               role : values.role,
               gender : values.gender,
               age : values.age,
-              nickname: values.nickname
+              nickname: values.nickname,
+              violation : 0
             }
             dispatch(updateUser(currentUser.uid, obj))
             dispatch(setFirstLogin(false));

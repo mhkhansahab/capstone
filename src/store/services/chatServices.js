@@ -20,8 +20,18 @@ export const getYourChats = (id) => async (dispatch) => {
     .ref("/")
     .child(`chats`)
     .on("value", (snapshot) => {
-      const chats = snapshot.val();
-      dispatch(setChats(chats));
+      if(snapshot.exists()){
+        const chats = snapshot.val();
+      const keys = Object.keys(snapshot.val());
+      keys.forEach((key)=>{
+        if(key.includes(id)){
+          const obj = {
+            [key] : chats[key]
+          }
+          dispatch(setChats(obj));
+        }
+      })
+      }
     });
 };
 export const initializeCurrentChat = (id) => (dispatch) => {

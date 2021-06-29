@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 import "./App.css";
-// import DesktopScreen from "./containers/DesktopScreen/DesktopScreen";
 import DesktopView from "./containers/DesktopView/DesktopView";
 import ViolationPage from "./containers/ViolationPage/ViolationPage";
 import ContactPage from "./containers/ContactPage/ContactPage";
@@ -12,11 +11,9 @@ import RolePage from "./containers/RolePage/RolePage";
 import Modal from "./containers/Modal/Modal";
 import firebase from "./config/firebaseConfig";
 import { setFirstLogin, setLogin } from "./store/actions/statusActions";
-import { getUserAndSetData, signOut } from "./store/services/authServices";
+import { getUserAndSetData } from "./store/services/authServices";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import {
-  isMobile
-} from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const loginUser = JSON.parse(window.localStorage.getItem("loginUser"));
-    
+
     if (loginUser) {
       if (!loginUser.role) {
         dispatch(setFirstLogin(true));
@@ -43,7 +40,6 @@ function App() {
         dispatch(setLogin(false));
       }
     });
-
   }, []);
 
   return (
@@ -55,31 +51,42 @@ function App() {
           </Route>
         ) : (
           <>
-            {isFirstLoginFromRedux ? (
-              <Route path="/" exact>
-                <RolePage></RolePage>
-              </Route>
+            {user && user.violation >= 10 ? (
+              <ViolationPage></ViolationPage>
             ) : (
               <>
-                {!user ? (
-                  <div className="loader-container">
-                    <div className="loader"><CircularProgress /></div>
-                  </div>
+                {isFirstLoginFromRedux ? (
+                  <Route path="/" exact>
+                    <RolePage></RolePage>
+                  </Route>
                 ) : (
                   <>
-                    {isMobile ?
+                    {!user ? (
+                      <div className="loader-container">
+                        <div className="loader">
+                          <CircularProgress />
+                        </div>
+                      </div>
+                    ) : (
                       <>
-                        <Route path="/" exact>
-                          <div className="chat-container"><ContactPage></ContactPage></div>
-                        </Route>
-                        <Route path="/chat">
-                          <div className="chat-container"><ChatLayout></ChatLayout></div>
-                        </Route>
-                      </> : 
-                      <DesktopView />
-                      // <ViolationPage/>
-                    }
-
+                        {isMobile ? (
+                          <>
+                            <Route path="/" exact>
+                              <div className="chat-container">
+                                <ContactPage></ContactPage>
+                              </div>
+                            </Route>
+                            <Route path="/chat">
+                              <div className="chat-container">
+                                <ChatLayout></ChatLayout>
+                              </div>
+                            </Route>
+                          </>
+                        ) : (
+                          <DesktopView />
+                        )}
+                      </>
+                    )}
                   </>
                 )}
               </>
@@ -88,7 +95,6 @@ function App() {
         )}
       </Switch>
       <Modal></Modal>
-      {/* <button onClick={()=>dispatch(signOut())}>Sign Out</button> */}
     </div>
   );
 }

@@ -33,8 +33,15 @@ const styles = ({
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-
     },
+    emptyDiv:{
+        display: "flex",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        color : "#647AFE",
+        fontFamily : "Lato-Regular"
+    }
     
 }
 );

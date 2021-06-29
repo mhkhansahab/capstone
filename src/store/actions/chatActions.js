@@ -3,13 +3,12 @@ export const DELETE_CHATS = "DELETE_CHATS";
 export const SET_CURRENT_CHAT = "SET_CURRENT_CHAT";
 
 
-export const setChats = (chats) => (dispatch) => {
+export const setChats = (chat) => (dispatch) => {
     
     const previousState = [];
-    if(chats !== null){
-        previousState.push(chats);
+    if(chat !== null){
+        previousState.push(chat);
     }
-    
     
     dispatch({
         type : SET_CHATS,
