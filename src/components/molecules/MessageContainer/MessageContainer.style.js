@@ -1,7 +1,8 @@
 const styles = {
     messageContainer:{
-        width: "98%",
-        height: "79%",
+        width: "94%",
+        padding: "0 3%",
+        height: "78%",
         overflowY: "scroll",
         position: "relative",
         display: "flex",
@@ -21,7 +22,7 @@ const styles = {
     },
     right : {
         margin : "5px 0",
-        alignSelf : "flex-end"
+        alignSelf : "flex-end",
     }
 
 }
