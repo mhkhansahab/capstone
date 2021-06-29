@@ -10,8 +10,9 @@ import RolePage from "./containers/RolePage/RolePage";
 import Modal from "./containers/Modal/Modal";
 import firebase from "./config/firebaseConfig";
 import { setFirstLogin, setLogin } from "./store/actions/statusActions";
-import { signOut, getUserAndSetData } from "./store/services/authServices";
+import { getUserAndSetData } from "./store/services/authServices";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import {setAnalysis} from "./store/services/chatServices";
 import {
   isBrowser,
   isMobile
@@ -67,17 +68,14 @@ function App() {
                     {isMobile ?
                       <>
                         <Route path="/" exact>
-                          <ContactPage></ContactPage>
+                          <div className="chat-container"><ContactPage></ContactPage></div>
                         </Route>
                         <Route path="/chat">
-                          <ChatLayout></ChatLayout>
+                          <div className="chat-container"><ChatLayout></ChatLayout></div>
                         </Route>
                       </> :
                       <DesktopScreen />
-
-
                     }
-
 
                   </>
                 )}

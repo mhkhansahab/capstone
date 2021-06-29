@@ -4,9 +4,10 @@ const styles = {
         backgroundColor:"#F6FAFD",
         position: "relative",
         minWidth: "320px",
+        width:"100%",
         margin: "0 auto",
-        maxHeight: "700px",
-
+        borderRight: "1px solid lightgray",
+        borderLeft: "1px solid lightgray",
     },
     header:{
         display: "flex",
@@ -28,17 +29,6 @@ const styles = {
         justifyContent: "center",
         alignItems: "center"
     },
-    '@media (min-width: 400px)': {
-        contactContainer: {
-            width: "25%",
-            borderRight: "1px solid lightgray",
-            borderLeft: "1px solid lightgray",
-
-
-
-        }
-
-    }
 }
 
 export {

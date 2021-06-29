@@ -4,7 +4,7 @@ import { styles } from './Footer.style';
 import { withStyles } from '@material-ui/styles';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sendMessage , mergeID} from '../../../store/services/chatServices';
+import { sendMessage , mergeID, setAnalysis} from '../../../store/services/chatServices';
 
 const Footer = ({classes}) => {
 
@@ -25,6 +25,7 @@ const Footer = ({classes}) => {
 
     const handleSend = ()=>{
         const messageID = mergeID(sender.uid,reciever.uid);
+        dispatch(setAnalysis(message.textMessage, sender));
         const messageData = {
             ...sender,
             message : message.textMessage

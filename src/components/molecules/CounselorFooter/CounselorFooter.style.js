@@ -9,11 +9,11 @@ const styles = {
         height: "10%",
         position: "absolute",
         bottom: "0",
-        backgroundColor: "#8098FF",
         color: "white",
-    }
+        backgroundColor:"#8098FF"
+    },
     
-
+    
 }
 
 export {

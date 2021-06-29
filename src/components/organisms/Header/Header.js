@@ -1,20 +1,33 @@
 import { styles } from './Header.style';
 import { withStyles } from '@material-ui/styles';
 import CustomButton from '../../atoms/CustomButton/CustomButton'
-// import {
-//     BrowserView,
-//     MobileView
-// } from "react-device-detect";
+import { withRouter } from "react-router";
+
+const Header = ({ classes, history, ...props}) => {
+
+    const gotoChats = ()=>{
+        history.push({
+            path:"/",
+            search : "?section=chats"
+        })
+    }
+
+    const gotoRequests = ()=>{
+        history.push({
+            path:"/",
+            search : "?section=requests"
+        })
+    }
 
 
-const Header = ({ classes,...props }) => {
     return (
         <div className={classes.headContainer}>
             {props.children}
 
             <div className={classes.buttonContainer}>
-            <CustomButton text="Chats" />
-            <CustomButton text="Requests" />
+            <CustomButton text="Chats" onClick={()=>gotoChats()}/>
+            <CustomButton text="Requests" onClick={()=>gotoRequests()}/>
+
             </div>
                     
         </div>
@@ -22,4 +35,4 @@ const Header = ({ classes,...props }) => {
     );
 }
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(withRouter(Header));

@@ -35,20 +35,19 @@ export const initializeCurrentChat = (id) => (dispatch) => {
 };
 
 export const getAnalysis = async (data) => {
-    console.log(data);
+  const obj = {
+    text: data
+  }
   try{
       const response = await fetch(
-          "https://text-sentiment.p.rapidapi.com/analyze",
+        "https://textblob-sentiment-analysis.herokuapp.com/analyze",
           {
             method: "POST",
             headers: {
-              "content-type": "application/x-www-form-urlencoded",
-              "x-rapidapi-key": "2afdc9fa8cmsheaa6d800875c59ap1ef7c6jsn8f0411164b7f",
-              "x-rapidapi-host": "text-sentiment.p.rapidapi.com",
-            },
-            body: {
-              text: data,
-            },
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin" : "*"
+              },
+            body: JSON.stringify(obj),
           }
         );
     const jsonResponse = await response.json();
@@ -60,10 +59,11 @@ export const getAnalysis = async (data) => {
 
 export const setAnalysis = (data, user) => async () => {
     const analysis = await getAnalysis(data);
-    console.log(analysis);
-
-    // firebase.database().ref("/").child(`users/${user.uid}`).update({
-    //     ...user,
-    //     violation : user.violation + 1
-    // })
+    console.log(analysis)
+    if(analysis.polarity <= -0.3){
+      firebase.database().ref("/").child(`users/${user.uid}`).update({
+        ...user,
+        violation : user.violation + 1
+    })
+    }
 };

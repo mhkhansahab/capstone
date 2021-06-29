@@ -10,7 +10,10 @@ const styles = ({
         boxShadow:"none",
         outline: "none",
         fontFamily : "Oswald-Regular",
-        letterSpacing : ".6px"
+        letterSpacing : ".6px",
+        '&:hover' : {
+            color: "#fff"
+        }
     }
 }
 );

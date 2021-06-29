@@ -8,10 +8,9 @@ const DesktopView = ({ classes }) => {
     return (
         <div className={classes.container}>
             <div className={classes.subContainer}>
-                <ContactPage />
+                <div className={classes.desktopContactLayout}><ContactPage /></div>
                 <ChatLayout />
             </div>
-
         </div>
 
     );

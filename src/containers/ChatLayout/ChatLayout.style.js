@@ -36,20 +36,6 @@ const styles = ({
 
     },
     
-
-    '@media (min-width: 800px)': {
-        container: {
-            width: "75%",
-            maxWidth: "1000px"
-
-
-
-        },
-
-
-    },
-
-
 }
 );
 
