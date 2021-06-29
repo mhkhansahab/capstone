@@ -14,7 +14,7 @@ const styles = {
         },
         slogan:{
             fontSize :"18px",
-            fontFamily : "Oswald-Regular",
+            fontFamily : "Roboto-Regular",
             color : "#2A84BD"
         },
         description:{

@@ -2,6 +2,7 @@
   font-family: Oswald-Light;
   src: url("./assets/fonts/Oswald-Light.ttf");
 }
+
 @font-face {
   font-family: Oswald-Regular;
   src: url("./assets/fonts/Oswald-Regular.ttf");
@@ -15,11 +16,23 @@
   src: url("./assets/fonts/Lato-Regular.ttf");
 }
 
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto-Light;
+  src: url("./assets/fonts/Roboto-Light.ttf");
+}
 html, body, .App {
     margin: 0;
     padding: 0;
     height: 100vh;
     background-color: #F6FAFD;
+}
+.App{
+  max-width: 1920px;
+  margin : 0 auto;
 }
 
 
