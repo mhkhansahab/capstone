@@ -8,10 +8,12 @@ const styles = {
         marginTop: "3px",
         marginRight: "auto",
         color:"#000",
-        fontFamily : "Oswald-Light",
+        fontFamily : "Roboto-Light",
         letterSpacing : ".6px",
         textAlign : "left",
-        border : "2px solid lightgrey"
+        border : "2px solid lightgrey",
+        boxShadow: "0 10px 6px -6px lightgray"
+
 
     }
 }

@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 import "./App.css";
 import DesktopView from "./containers/DesktopView/DesktopView";
+import ViolationPage from "./containers/ViolationPage/ViolationPage";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import ChatLayout from "./containers/ChatLayout/ChatLayout";
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
@@ -51,7 +52,7 @@ function App() {
         ) : (
           <>
             {user && user.violation >= 10 ? (
-              <div>show data</div>
+              <ViolationPage></ViolationPage>
             ) : (
               <>
                 {isFirstLoginFromRedux ? (

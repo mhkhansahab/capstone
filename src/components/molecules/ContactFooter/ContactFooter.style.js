@@ -17,15 +17,11 @@ const styles = {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-
-    
-
+        cursor: "pointer",
+        fontFamily : "Roboto-Regular",
 
     },
 
-    '@media (min-width: 500px)': {
-        
-    }
 }
 
 export {

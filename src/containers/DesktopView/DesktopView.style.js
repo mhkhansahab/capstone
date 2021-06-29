@@ -5,6 +5,7 @@ const styles = {
         height: "100%",
         width: "100%",
         backgroundColor: "#bfd7ff",
+        
 
 
     },
@@ -17,6 +18,7 @@ const styles = {
         overflow: "hidden",
         borderRadius: "10px",
         maxHeight: "700px",
+    
 
         },
     desktopContactLayout:{

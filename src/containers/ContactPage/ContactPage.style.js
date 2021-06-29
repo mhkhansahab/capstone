@@ -10,8 +10,10 @@ const styles = {
         borderLeft: "1px solid lightgray",
     },
     header:{
-        display: "flex",
-        flexDirection: "row",
+        fontFamily : "Roboto-Regular",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden",
 
     },
     listContainer: {
