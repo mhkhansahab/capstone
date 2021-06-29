@@ -28,13 +28,13 @@ const ChatLayout = ({ classes }) => {
             <div className={classes.sideBar}></div>
             <div className={classes.subContainer}>
                 {isMobile ?
-                    <Header>
+                    <div className={classes.header}>
                         <Link to="/">
                             <div className={classes.icon}>
                                 <BackIcon />
                             </div>
                         </Link>
-                    </Header>:
+                    </div> :
                     <div className={classes.header}>
 
                     </div>

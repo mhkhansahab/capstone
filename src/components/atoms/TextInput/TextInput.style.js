@@ -3,16 +3,18 @@ const styles = {
         [`& fieldset`]: {
             borderRadius: "10px",
         },
-        marginLeft: "10px"
+        marginLeft: "10px",
+        width: "70%",
+
     },
-    '@media (min-width: 1000px)': {
+    '@media (min-width: 400px)': {
         input: {
             [`& fieldset`]: {
                 borderRadius: "10px",
                 width: "100%",
 
             },
-            width: "100%",
+            width: "70%",
 
 
 

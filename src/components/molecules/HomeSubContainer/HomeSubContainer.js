@@ -8,10 +8,9 @@ const HomeSubContainer = ({ classes }) => {
       <div className={classes.logoContainer}>
         <img src={logo}></img>
       </div>
-      <div className={classes.slogan}>Divine Healing!</div>
 
       <div className={classes.description}>
-        Get in touch with professional licensed counselors to heal your mind from the everyday worries. Our community guarantees you the fastest response.
+        Get in touch with professional licensed counselors to heal your mind from the everyday worries.
       </div>
     </div>
   );
