@@ -1,11 +1,9 @@
 const styles = {
     messageContainer:{
         width: "98%",
-        height: "79.5%",
+        height: "79%",
         overflowY: "scroll",
         position: "relative",
-        marginRight: "1%",
-        marginLeft: "1%",
         display: "flex",
         backgroundColor:"#F6FAFD",
         flexDirection: "column",

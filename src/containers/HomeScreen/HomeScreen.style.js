@@ -5,7 +5,8 @@ const styles = {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor:"#F6FAFD",
     },
 
     

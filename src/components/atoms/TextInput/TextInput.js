@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/styles";
 
 const TextInput = ({ classes, onChange, onEnter, value }) => {
   return (
-    <div>
       <TextField
         id="outlined-basic" label="Your Message..." variant="outlined"
         size="small"
@@ -14,7 +13,6 @@ const TextInput = ({ classes, onChange, onEnter, value }) => {
         value={value}
         onKeyPress={(e) => onEnter(e)}
       ></TextField>
-    </div>
   );
 };
 

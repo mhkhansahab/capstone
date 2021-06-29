@@ -8,8 +8,6 @@ const styles = ({
         backgroundColor: "#F6FAFD",
         width: "100%",
         minWidth: "320px",
-        maxWidth: "320px",
-        maxHeight: "680px",
         margin: "0 auto",
         borderRight: "1px solid lightgray",
         borderLeft: "1px solid lightgray",
@@ -31,7 +29,10 @@ const styles = ({
     header: {
         backgroundColor: "#8098FF",
         padding: "0px 10px",
-        height: "10%"
+        height: "10%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
 
     },
     
