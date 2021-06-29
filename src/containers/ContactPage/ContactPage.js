@@ -60,13 +60,13 @@ const ContactPage = ({ classes, history, ...props }) => {
     <>
       <div className={classes.contactContainer}>
         <Header>
-          <h3 className={classes.header}>Hello, {user.name}</h3>
+          <h3 className={classes.header}>Hello, {user.nickname}</h3>
         </Header>
 
         <div className={classes.listContainer}>
           {section !== "requests" ? 
           <div>
-            {chats
+           {chats.length !== 0
               ? chats.map((item) => {
                   const key = Object.keys(item)[0];
                   return users.map((element) => {
@@ -77,7 +77,7 @@ const ContactPage = ({ classes, history, ...props }) => {
                         if (user.uid !== singleUser.uid) {
                           return (
                             <ContactList
-                              name={singleUser.name}
+                              name={singleUser.nickname}
                               key={singleUser.uid}
                               onClick={() => goToChat(singleUser)}
                             ></ContactList>
@@ -87,11 +87,11 @@ const ContactPage = ({ classes, history, ...props }) => {
                     });
                   });
                 })
-              : null}
+              : <div className={classes.emptyDiv}>No Chats Available</div>}
           </div>
           :
           <div>
-            {requests
+            {requests.length !== 0 && user.role === "Counselor"
               ? requests.map((item) => {
                   const requestArr = Object.entries(item);
                   const requestID = requestArr[0][0];
@@ -106,7 +106,7 @@ const ContactPage = ({ classes, history, ...props }) => {
                         if (user.uid !== singleUser.uid) {
                           return (
                             <RequestList
-                              name={singleUser.name}
+                              name={singleUser.nickname}
                               question={requestData.question}
                               key={singleUser.uid}
                               showMine={false}
@@ -123,7 +123,7 @@ const ContactPage = ({ classes, history, ...props }) => {
                         } else {
                           return (
                             <RequestList
-                              name={singleUser.name}
+                              name={singleUser.nickname}
                               question={requestData.question}
                               key={singleUser.uid}
                               showMine={true}
@@ -142,7 +142,8 @@ const ContactPage = ({ classes, history, ...props }) => {
                     });
                   });
                 })
-              : null}
+              : <div className={classes.emptyDiv}>No Request Available</div>
+              }
           </div>
           }
         </div>

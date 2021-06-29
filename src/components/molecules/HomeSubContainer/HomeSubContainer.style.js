@@ -12,14 +12,9 @@ const styles = {
                 width : "140px"
             }
         },
-        slogan:{
-            fontSize :"18px",
-            fontFamily : "Oswald-Regular",
-            color : "#2A84BD"
-        },
         description:{
             textAlign: "center",
-            color : "#2A84BD",
+            color : "#647AFE",
             fontSize: "16px",
             width: "fit-content",
             padding : "10px 40px",

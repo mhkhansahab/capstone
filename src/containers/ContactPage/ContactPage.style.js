@@ -29,6 +29,13 @@ const styles = {
         justifyContent: "center",
         alignItems: "center"
     },
+    emptyDiv:{
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "70%",
+    color : "#647AFE",
+    fontFamily : "Lato-Regular"
+    }
 }
 
 export {
