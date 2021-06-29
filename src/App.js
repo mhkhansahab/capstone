@@ -51,7 +51,7 @@ function App() {
           </Route>
         ) : (
           <>
-            {user && user.violation >= 10 ? (
+            {(user && user.violation >= 10) ? (
               <ViolationPage></ViolationPage>
             ) : (
               <>

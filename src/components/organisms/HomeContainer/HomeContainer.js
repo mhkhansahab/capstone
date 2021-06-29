@@ -20,7 +20,7 @@ const HomeContainer = ({classes}) => {
                 loaderStatus ? <div className="loader"><CircularProgress /></div> 
                 :
                 <LoginButton text="Login with Google" onClick={() => loginPressed()}>
-                    <img class={classes.icon} src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                    <img class={classes.icon} alt="Google Logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
                 </LoginButton> 
             }
         </div>

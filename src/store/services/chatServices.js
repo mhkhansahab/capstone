@@ -1,6 +1,5 @@
 import { setChats, setCurrentChat } from "../actions/chatActions";
 import firebase from "./../../config/firebaseConfig";
-import { useSelector } from "react-redux";
 
 export const mergeID = (firstID, secondID) => {
   if (firstID > secondID) {
@@ -22,7 +21,7 @@ export const getYourChats = (id) => async (dispatch) => {
     .on("value", (snapshot) => {
       if(snapshot.exists()){
         const chats = snapshot.val();
-      const keys = Object.keys(snapshot.val());
+        const keys = Object.keys(snapshot.val());
       keys.forEach((key)=>{
         if(key.includes(id)){
           const obj = {
