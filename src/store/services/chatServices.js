@@ -35,24 +35,23 @@ export const initializeCurrentChat = (id) => (dispatch) => {
 };
 
 export const getAnalysis = async (data) => {
-    console.log(data);
   try{
       const response = await fetch(
-          "https://text-sentiment.p.rapidapi.com/analyze",
+          // "https://textblob-sentiment-analysis.herokuapp.com/analyze",
+          "http://localhost:8000/analyze",
           {
             method: "POST",
             headers: {
-              "content-type": "application/x-www-form-urlencoded",
-              "x-rapidapi-key": "2afdc9fa8cmsheaa6d800875c59ap1ef7c6jsn8f0411164b7f",
-              "x-rapidapi-host": "text-sentiment.p.rapidapi.com",
-            },
+              "content-type": "application/json",
+              "Access-Control-Allow-Origin" : "*"
+              },
             body: {
               text: data,
             },
           }
         );
-    const jsonResponse = await response.json();
-    return jsonResponse;
+    //const jsonResponse = await response.json();
+    return response;
   }catch(error){
       console.log(error);
   }

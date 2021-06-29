@@ -10,8 +10,9 @@ import RolePage from "./containers/RolePage/RolePage";
 import Modal from "./containers/Modal/Modal";
 import firebase from "./config/firebaseConfig";
 import { setFirstLogin, setLogin } from "./store/actions/statusActions";
-import { signOut, getUserAndSetData } from "./store/services/authServices";
+import { getUserAndSetData } from "./store/services/authServices";
 import CircularProgress from "@material-ui/core/CircularProgress";
+// import {setAnalysis} from "./store/services/chatServices";
 
 function App() {
   const dispatch = useDispatch();
@@ -73,6 +74,7 @@ function App() {
           </>
         )}
       </Switch>
+      {/* <button onClick={()=>dispatch(setAnalysis("everything is good"))}>asdas</button> */}
       <Modal></Modal>
      
     </div>

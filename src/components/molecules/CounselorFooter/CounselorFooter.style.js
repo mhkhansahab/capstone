@@ -9,11 +9,15 @@ const styles = {
         height: "10%",
         position: "absolute",
         bottom: "0",
-        backgroundImage: "radial-gradient( circle 848.6px at 10% 20%,  rgba(140,58,255,1) 0%, rgba(181,59,253,1) 50.1% )",
         color: "white",
+        backgroundColor:"#8098FF"
+    },
+    '@media (min-width: 400px)': {
+        container: {
+            width: "25%",
+        },
     }
     
-
 }
 
 export {

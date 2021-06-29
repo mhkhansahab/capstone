@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom';
 const ChatLayout = ({ classes }) => {
     const dispatch = useDispatch();
     const sender = useSelector((state) => state.userReducer.currentUser);
-
     useEffect(() => {
         dispatch(getAllUsers());
         dispatch(getYourChats(sender.uid));
