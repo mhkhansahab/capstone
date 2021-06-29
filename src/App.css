@@ -21,6 +21,10 @@ html, body, .App {
     height: 100vh;
     background-color: #F6FAFD;
 }
+.App{
+  max-width: 1920px;
+  margin : 0 auto;
+}
 
 .loader-container{
   height : 100vh;

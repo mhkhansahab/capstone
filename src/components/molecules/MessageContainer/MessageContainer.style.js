@@ -1,12 +1,13 @@
 const styles = {
     messageContainer:{
-        width: "98%",
+        width: "96%",
         height: "79%",
         overflowY: "scroll",
         position: "relative",
         display: "flex",
         backgroundColor:"#F6FAFD",
         flexDirection: "column",
+        padding : "0 2%",
         '&::-webkit-scrollbar': {
             display: "none",
           },
